@@ -1,6 +1,3 @@
-/* ==========================================================================
-   PRELOADER
-   ========================================================================== */
 .preloader {
   position: fixed;
   inset: 0;
@@ -9,6 +6,7 @@
   align-items: center;
   justify-content: center;
   background: var(--basalt);
+  overflow: hidden;
   transition:
     opacity 0.6s ease,
     visibility 0.6s ease;
@@ -18,31 +16,104 @@
   visibility: hidden;
   pointer-events: none;
 }
+
+.preloader-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  display: none;
+}
+.preloader-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: none;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 18, 15, 0.1) 0%,
+    rgba(20, 18, 15, 0.55) 100%
+  );
+}
+
+@media (min-width: 769px) {
+  .preloader-video,
+  .preloader-video-overlay {
+    display: block;
+  }
+}
+
+.preloader-flash {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: #f6f1e7;
+  opacity: 0;
+  pointer-events: none;
+}
+.preloader-flash.is-active {
+  animation: pl-flash 0.6s ease-out 1 both;
+}
+@keyframes pl-flash {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .preloader-mark {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 22px;
-}
-.preloader-stage {
   position: relative;
-  max-width: 440px;
-  width: 60vw;
-  aspect-ratio: 1 / 1;
-  margin: 0 auto;
+  z-index: 6;
 }
+
+.preloader-word-wrap {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
 .preloader-word {
   font-family: "Fraunces", serif;
-  font-size: 80px;
+  font-size: 72px;
   color: var(--ivory-soft);
   letter-spacing: 0.02em;
   opacity: 0;
   transform: translateY(10px);
-  animation: pl-word-in 0.9s cubic-bezier(0.4, 0, 0.2, 1) 1.7s 1 both;
 }
 .preloader-word em {
   font-style: italic;
   color: var(--brass-soft);
+}
+
+.preloader-mark.is-revealed .preloader-word {
+  animation: pl-word-in 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.05s 1 both;
+}
+
+.preloader-shine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -60%;
+  width: 40%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 233, 173, 0.85) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  opacity: 0;
+  pointer-events: none;
+}
+.preloader-mark.is-revealed .preloader-shine {
+  animation: pl-shine 1s ease 1.05s 1 both;
 }
 
 @keyframes pl-word-in {
@@ -55,113 +126,34 @@
     transform: translateY(0);
   }
 }
-/* Elementos: estado inicial explícito (tableta cerrada, toalla oculta) */
-.pl-droplet {
-  animation: pl-fall 2.4s cubic-bezier(0.55, 0, 0.3, 1) 1 both;
-}
-.pl-ripple {
-  opacity: 0;
-  animation: pl-ripple 2.4s ease-out 1 both;
-}
-.pl-tablet {
-  animation: pl-sink 2.4s cubic-bezier(0.55, 0, 0.3, 1) 1 both;
-}
-.pl-napkin {
-  opacity: 0;
-  transform: scale(0.3);
-  transform-origin: center;
-  animation: pl-reveal 2.4s cubic-bezier(0.4, 0, 0.2, 1) 1 both;
-}
-
-@keyframes pl-fall {
+@keyframes pl-shine {
   0% {
-    transform: translateY(-36px);
+    left: -60%;
+    opacity: 0;
+  }
+  10% {
     opacity: 1;
   }
-  46% {
-    transform: translateY(44px);
+  60% {
     opacity: 1;
-  } /* toca la tableta */
-  54% {
-    transform: translateY(44px);
-    opacity: 0;
-  } /* se absorbe */
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes pl-ripple {
-  0%,
-  44% {
-    opacity: 0;
-    transform: scale(0.3);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(0.6);
-  }
-  75% {
-    opacity: 0;
-    transform: scale(2.4);
   }
   100% {
+    left: 120%;
     opacity: 0;
-  }
-}
-@keyframes pl-sink {
-  0%,
-  46% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  62% {
-    transform: scale(0.92);
-    opacity: 0.4;
-  }
-  72% {
-    transform: scale(0.85);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(0.85);
-    opacity: 0;
-  }
-}
-@keyframes pl-reveal {
-  0%,
-  55% {
-    opacity: 0;
-    transform: scale(0.3);
-  }
-  80% {
-    opacity: 1;
-    transform: scale(1.03);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 
 @media (max-width: 600px) {
-  .preloader-stage {
-    width: 78vw;
-  }
   .preloader-word {
-    font-size: 26px;
+    font-size: 50px;
   }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .pl-droplet,
-  .pl-ripple,
-  .pl-tablet,
-  .pl-napkin,
-  .preloader-word {
+  .preloader-flash,
+  .preloader-mark.is-revealed .preloader-word,
+  .preloader-mark.is-revealed .preloader-shine {
     animation: none !important;
-  }
-  .pl-napkin {
-    opacity: 1;
-    transform: scale(1);
   }
   .preloader-word {
     opacity: 1;

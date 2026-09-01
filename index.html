@@ -55,74 +55,23 @@
     <link rel="stylesheet" href="css/preloading.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
     <div id="preloader" class="preloader">
-      <div class="preloader-mark">
-        <div class="preloader-stage">
-          <div class="tray"></div>
-          <svg class="stage-svg" viewBox="0 0 300 300">
-            <g class="pl-droplet">
-              <path
-                d="M150 60 C 158 78, 166 90, 150 100 C 134 90, 142 78, 150 60 Z"
-                fill="#8FBFE0"
-              />
-            </g>
-            <ellipse
-              class="pl-ripple"
-              cx="150"
-              cy="150"
-              rx="34"
-              ry="10"
-              fill="none"
-              stroke="#8FBFE0"
-              stroke-width="2"
-            />
-            <g class="pl-tablet">
-              <path
-                d="M120 148 A 30 15 0 0 0 180 148 L 180 162 A 30 15 0 0 1 120 162 Z"
-                fill="#EFEBE0"
-              />
-              <ellipse
-                cx="150"
-                cy="148"
-                rx="30"
-                ry="15"
-                fill="#FFFFFF"
-                stroke="#E4DEC2"
-                stroke-width="1.5"
-              />
-            </g>
-            <g class="pl-napkin">
-              <rect
-                x="96"
-                y="96"
-                width="108"
-                height="108"
-                rx="6"
-                fill="#FAF7F0"
-                stroke="#E4DEC2"
-                stroke-width="1.5"
-              />
-              <line
-                x1="150"
-                y1="96"
-                x2="150"
-                y2="204"
-                stroke="#E4DEC2"
-                stroke-width="1"
-              />
-              <line
-                x1="96"
-                y1="150"
-                x2="204"
-                y2="150"
-                stroke="#E4DEC2"
-                stroke-width="1"
-              />
-            </g>
-          </svg>
+      <video
+        id="preloader-video"
+        class="preloader-video"
+        src="video/preloading.mp4"
+        muted
+        playsinline
+        preload="auto"
+      ></video>
+      <div class="preloader-video-overlay"></div>
+      <div class="preloader-flash" id="preloader-flash"></div>
+
+      <div class="preloader-mark" id="preloader-mark">
+        <div class="preloader-word-wrap">
+          <div class="preloader-word">Pure<em>Napkin</em></div>
+          <div class="preloader-shine"></div>
         </div>
-        <div class="preloader-word">Pure<em>Napkin</em></div>
       </div>
     </div>
     <header>
@@ -708,38 +657,56 @@
 
           <div class="usos-grid">
             <div class="uso-card">
-              <div class="ic">🍽️</div>
+              <div class="ic ic-img">
+                <img src="img/usos/restaurante.jpg" alt="Restaurantes" />
+              </div>
               <div class="t">Restaurantes</div>
               <div class="d">
-                El detalle que abre la experiencia en la mesa.
+                La primera impresión de una cena que se recordará.
               </div>
             </div>
+
             <div class="uso-card">
-              <div class="ic">🏨</div>
+              <div class="ic ic-img">
+                <img src="img/usos/hotel1.jpg" alt="Hoteles" />
+              </div>
               <div class="t">Hoteles</div>
-              <div class="d">
-                Amenity de bienvenida, biodegradable y premium.
-              </div>
+              <div class="d">El lujo se siente desde el primer contacto.</div>
             </div>
+
             <div class="uso-card">
-              <div class="ic">🥂</div>
+              <div class="ic ic-img">
+                <img src="img/usos/club.jpg" alt="Clubes" />
+              </div>
               <div class="t">Clubes</div>
               <div class="d">Frescura elegante para el servicio VIP.</div>
             </div>
+
             <div class="uso-card">
-              <div class="ic">🎶</div>
+              <div class="ic ic-img">
+                <img src="img/usos/discoteca.jpg" alt="Discotecas" />
+              </div>
               <div class="t">Discotecas</div>
-              <div class="d">Higiene con estilo, sin plástico ni papel.</div>
+              <div class="d">
+                Frescura exclusiva para las noches que importan.
+              </div>
             </div>
+
             <div class="uso-card">
-              <div class="ic">🧖</div>
+              <div class="ic ic-img">
+                <img src="img/usos/spas.jpg" alt="Spas" />
+              </div>
               <div class="t">Spas</div>
-              <div class="d">Ritual de bienestar, frío o caliente.</div>
+              <div class="d">
+                El silencio de un verdadero ritual de bienestar.
+              </div>
             </div>
             <div class="uso-card">
-              <div class="ic">⛳</div>
+              <div class="ic ic-img">
+                <img src="img/usos/golf.jpg" alt="Golf" />
+              </div>
               <div class="t">Golf</div>
-              <div class="d">Refresco al llegar al hoyo 19.</div>
+              <div class="d">Un gesto de cortesía en cada recorrido.</div>
             </div>
           </div>
         </div>

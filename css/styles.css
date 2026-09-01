@@ -2,17 +2,17 @@
    1. VARIABLES & RESET
    ========================================================================== */
 :root {
-  /* Paleta Bambú */
-  --ivory: #f3f0e1; /* Pulpa de bambú, papel natural */
-  --ivory-soft: #faf8ee; /* Pulpa clara para tarjetas */
-  --basalt: #1c2a18; /* Verde bambú casi negro (Texto y fondos oscuros) */
-  --teal: #3e6b39; /* Verde tallo de bambú vivo (Acento primario) */
-  --teal-deep: #22381e; /* Verde bosque de bambú profundo */
-  --bamboo: #8fb35e; /* Verde bambú fresco/claro (Acento secundario) */
-  --brass: #b99544; /* Dorado de caña de bambú (Botones/Llamados a la acción) */
-  --brass-soft: #d9c088; /* Dorado suave sobre fondos oscuros */
-  --stone: #e4dec2; /* Fibra de bambú clara, fondo de sección */
-  --stone-line: rgba(28, 42, 24, 0.14);
+  /* Paleta Onyx & Oro (Luxury) */
+  --ivory: #f6f1e7; /* Alabastro — fondo base cálido */
+  --ivory-soft: #fbf8f2; /* Alabastro claro — tarjetas */
+  --basalt: #14120f; /* Onyx — texto y fondos oscuros */
+  --teal: #14120f; /* Onyx (reemplaza acento verde, ahora casi-negro) */
+  --teal-deep: #0c0a08; /* Onyx profundo — fondos oscuros (galería, cita) */
+  --bamboo: #8c6a3d; /* Bronce profundo — acento secundario/texto */
+  --brass: #c9a227; /* Oro champán — botones, CTA, acentos */
+  --brass-soft: #e3c565; /* Oro suave — sobre fondos oscuros */
+  --stone: #ece4d3; /* Alabastro cálido — fondo de sección */
+  --stone-line: rgba(20, 18, 15, 0.14);
 }
 
 * {
@@ -78,7 +78,7 @@ h3,
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 0.18em;
-  color: var(--teal);
+  color: var(--brass);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -161,10 +161,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(243, 238, 227, 0.86);
+  background: rgba(20, 18, 15, 0.9);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--stone-line);
+  border-bottom: 1px solid rgba(246, 241, 231, 0.1);
 }
 
 nav {
@@ -184,6 +184,7 @@ nav {
   display: flex;
   align-items: baseline;
   gap: 8px;
+  color: var(--ivory-soft);
 }
 
 .logo em {
@@ -201,11 +202,11 @@ nav {
   position: relative;
   font-size: 15.5px;
   font-weight: 700;
-  color: var(--basalt);
-  opacity: 1; /* Sin transparencia → más nítido */
+  color: var(--ivory-soft);
+  opacity: 0.85; /* Sin transparencia → más nítido */
   letter-spacing: 0.01em;
   padding: 4px 0;
-  transition: color 0.25s ease;
+  transition: color 0.25s ease, opacity 0.25s ease;
 }
 
 /* Línea animada Brass debajo del link */
@@ -222,7 +223,8 @@ nav {
 }
 
 .navlinks a:hover {
-  color: var(--teal);
+  color: var(--brass);
+  opacity: 1;
 }
 
 .navlinks a:hover::after {
@@ -230,8 +232,8 @@ nav {
 }
 
 .nav-cta {
-  background: var(--teal);
-  color: var(--ivory-soft);
+  background: var(--brass);
+  color: var(--basalt);
   padding: 10px 22px;
   border-radius: 100px;
   font-size: 13.5px;
@@ -245,7 +247,7 @@ nav {
 }
 
 .nav-cta:hover {
-  background: var(--teal-deep);
+  background: var(--brass-soft);
   transform: translateY(-2px);
 }
 
@@ -254,9 +256,9 @@ nav {
   width: 44px;
   height: 44px;
   padding: 9px;
-  border: 1px solid var(--stone-line);
+   border: 1px solid rgba(246, 241, 231, 0.18);
   border-radius: 50%;
-  background: rgba(250, 248, 238, 0.7);
+ background: rgba(246, 241, 231, 0.06);
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -269,13 +271,21 @@ nav {
   width: 19px;
   height: 2px;
   border-radius: 2px;
-  background: var(--basalt);
-  transition: transform 0.25s ease, opacity 0.2s ease;
+  background: var(--ivory-soft);
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
 }
 
-.nav-toggle.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.nav-toggle.is-open span:nth-child(2) { opacity: 0; }
-.nav-toggle.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
 
 .footer-description {
   margin-top: 12px;
@@ -284,8 +294,15 @@ nav {
   line-height: 1.6;
 }
 
-.concepto-title { font-size: 32px; margin-top: 14px; margin-bottom: 20px; }
-.pedidos-title { font-size: 30px; margin-top: 14px; }
+.concepto-title {
+  font-size: 32px;
+  margin-top: 14px;
+  margin-bottom: 20px;
+}
+.pedidos-title {
+  font-size: 30px;
+  margin-top: 14px;
+}
 
 /* ==========================================================================
      5. HERO SECTION (Video & Contenido Principal)
@@ -1060,21 +1077,12 @@ nav {
 }
 
 .uso-card {
-  background: #fff;
-  border: 1px solid rgba(44, 43, 40, 0.08);
-  border-radius: 16px;
-  padding: 36px 28px;
+  padding: 0 12px;
   text-align: center;
   transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease,
-    border-color 0.4s ease;
-}
-
-.uso-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(44, 43, 40, 0.1);
-  border-color: rgba(185, 149, 68, 0.35);
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .uso-card .ic {
@@ -1082,10 +1090,29 @@ nav {
   line-height: 1;
   margin-bottom: 18px;
 }
+.uso-card .ic-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  margin: 0 auto 26px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--basalt, #2c2b28);
+  box-shadow: 0 24px 50px rgba(20, 18, 15, 0.22);
+}
+.uso-card .ic-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.uso-card:hover .ic-img img {
+  transform: scale(1.08);
+}
 
 .uso-card .t {
   font-family: "Fraunces", serif;
-  font-size: 21px;
+  font-size: 24px;
   color: var(--basalt, #2c2b28);
   margin-bottom: 8px;
 }
@@ -1366,18 +1393,38 @@ footer .logo {
     box-shadow: 0 18px 40px rgba(28, 42, 24, 0.14);
   }
 
-  .navlinks.is-open { display: flex; }
-  .navlinks a { padding: 13px 12px; border-radius: 10px; }
-  .navlinks a:hover { background: rgba(62, 107, 57, 0.06); }
-  .navlinks a::after { display: none; }
-  .nav-cta { margin-left: auto; margin-right: 10px; }
-  .nav-toggle { display: inline-flex; }
+  .navlinks.is-open {
+    display: flex;
+  }
+  .navlinks a {
+    padding: 13px 12px;
+    border-radius: 10px;
+  }
+  .navlinks a:hover {
+    background: rgba(62, 107, 57, 0.06);
+  }
+  .navlinks a::after {
+    display: none;
+  }
+  .nav-cta {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  .nav-toggle {
+    display: inline-flex;
+  }
 }
 
 @media (max-width: 560px) {
-  nav { padding: 14px 20px; }
-  .logo { font-size: 20px; }
-  .nav-cta { display: none; }
+  nav {
+    padding: 14px 20px;
+  }
+  .logo {
+    font-size: 20px;
+  }
+  .nav-cta {
+    display: none;
+  }
   .wrap {
     padding: 0 20px;
   }
@@ -1426,7 +1473,9 @@ footer .logo {
     background-position: center;
   }
 
-  .hero-carousel { display: none; }
+  .hero-carousel {
+    display: none;
+  }
 
   .hero-overlay {
     background: linear-gradient(
@@ -1437,7 +1486,6 @@ footer .logo {
     );
   }
 }
-
 
 /* ============================================================================
    14. ACCESIBILIDAD Y ACABADOS DE PRODUCCIÓN
@@ -1485,10 +1533,14 @@ textarea:focus-visible {
   border-radius: 8px;
   background: var(--basalt);
   color: var(--ivory);
-  font: 600 12px/1.2 "Manrope", sans-serif;
+  font:
+    600 12px/1.2 "Manrope",
+    sans-serif;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .wa-float:hover::after,
