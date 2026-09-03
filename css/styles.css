@@ -1338,18 +1338,31 @@ footer .logo {
 
 .wa-float {
   position: fixed;
-  right: 26px;
-  bottom: 26px;
-  z-index: 60;
-  width: 60px;
-  height: 60px;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background-color: #25d366;
+  color: #ffffff;
   border-radius: 50%;
-  background: #25d366;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
-  animation: pulse 2.6s ease-in-out infinite;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  text-decoration: none;
+}
+.wa-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+.wa-float svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
 }
 
 @keyframes pulse {
