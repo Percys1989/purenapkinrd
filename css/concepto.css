@@ -145,24 +145,3 @@
   margin: 0;
 }
 
-/* Adaptación responsive para pantallas medianas y móviles */
-@media (max-width: 900px) {
-  .concepto-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .concepto-badges {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .concepto-badge-item {
-    padding: 1rem 1.2rem;
-  }
-
-  .badge-icon-realistic {
-    width: 64px;
-    height: 64px;
-  }
-}

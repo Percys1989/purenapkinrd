@@ -1,0 +1,31 @@
+.closing-cta {
+  background: var(--teal-deep, #22381e);
+  padding: 110px 0;
+  text-align: center;
+}
+.closing-cta-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.closing-logo {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--ivory-soft);
+  margin-bottom: 20px;
+}
+.closing-logo em { font-style: normal; color: var(--ivory-soft); }
+.closing-tagline {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brass-soft);
+  margin-bottom: 24px;
+}
+.closing-cta h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  color: var(--ivory-soft);
+  line-height: 1.2;
+  margin-bottom: 40px;
+}

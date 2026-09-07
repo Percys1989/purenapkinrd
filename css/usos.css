@@ -1,4 +1,3 @@
-
 /* ==========================================================================
      10. USOS
      ========================================================================== */
@@ -112,4 +111,19 @@
 .ic-badge i {
   font-size: 22px;
   line-height: 1;
+}
+
+@media (max-width: 920px) {
+  .usos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .usos-grid {
+    grid-template-columns: 1fr;
+  }
+  .uso-card {
+    padding: 0;
+  }
 }

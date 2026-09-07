@@ -60,18 +60,6 @@ textarea:focus-visible {
   transform: translateY(-50%) translateX(0);
 }
 
-@media (max-width: 560px) {
-  .wa-float {
-    right: 18px;
-    bottom: 18px;
-    width: 54px;
-    height: 54px;
-  }
-
-  .wa-float::after {
-    display: none;
-  }
-}
 /* --- Accesibilidad --- */
 @media (prefers-reduced-motion: reduce) {
   .droplet,

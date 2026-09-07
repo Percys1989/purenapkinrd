@@ -25,7 +25,8 @@
     setTimeout(() => preloader.classList.add("is-hidden"), remaining);
   }
 
-  if (isDesktop && video) {
+  if (isDesktop && video && video.dataset.src) {
+    video.src = video.dataset.src; // solo se descarga aquí, en desktop
     video.addEventListener("timeupdate", () => {
       if (video.currentTime >= FLASH_AT) reveal();
     });
@@ -33,6 +34,8 @@
       // Autoplay bloqueado: revelamos el nombre igual, sin bloquear al usuario.
       reveal();
     });
+    // Seguridad: si el video nunca dispara timeupdate (falla de red, etc.)
+    setTimeout(reveal, FLASH_AT * 1000 + 500);
   } else {
     setTimeout(reveal, 300);
   }
