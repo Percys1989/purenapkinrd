@@ -1,0 +1,168 @@
+/* ==========================================================================
+   7. CONCEPTO
+   ========================================================================== */
+.concepto {
+  padding: 96px 0;
+  background: var(--ivory-soft);
+  border-top: 1px solid var(--stone-line);
+  border-bottom: 1px solid var(--stone-line);
+}
+
+.concepto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.concepto-grid p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #403c34;
+  margin-bottom: 16px;
+}
+
+/* Columna izquierda: Tags de origen */
+.origin-tags {
+  display: flex;
+  gap: 10px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+.origin-tags span {
+  border: 1px solid var(--stone-line);
+  border-radius: 100px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--teal-deep);
+}
+
+/* Columna derecha: Agrupador de Quote y Badges */
+.concepto-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: flex-start;
+}
+
+.quote-block {
+  background: var(--teal-deep);
+  color: var(--ivory-soft);
+  border-radius: 20px;
+  padding: 40px 36px;
+}
+
+.quote-block q {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.45;
+  display: block;
+}
+
+.quote-block .who {
+  margin-top: 20px;
+  font-size: 13px;
+  opacity: 0.65;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+/* Grid de las 3 tarjetas inferiores */
+.concepto-badges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.concepto-badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 1.2rem 1rem;
+  background: var(--ivory-soft, #fbf8f2);
+  border: 1px solid var(--stone-line, rgba(20, 18, 15, 0.14));
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(20, 18, 15, 0.04);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.concepto-badge-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201, 162, 39, 0.35);
+  box-shadow: 0 12px 28px rgba(20, 18, 15, 0.12);
+}
+
+/* Contenedor e imagen del icono realista */
+.badge-icon-realistic {
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
+.badge-icon-realistic img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(20, 18, 15, 0.2))
+    drop-shadow(0 14px 22px rgba(20, 18, 15, 0.12));
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.3s ease;
+}
+
+.concepto-badge-item:hover .badge-icon-realistic img {
+  transform: scale(1.1) translateY(-3px);
+  filter: drop-shadow(0 8px 14px rgba(20, 18, 15, 0.24))
+    drop-shadow(0 18px 28px rgba(201, 162, 39, 0.18));
+}
+
+/* Textos dentro de la tarjeta */
+.concepto-badge-item .badge-text h4 {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--basalt, #14120f);
+  margin: 0 0 0.35rem 0;
+  letter-spacing: 0.01em;
+}
+
+.concepto-badge-item .badge-text p {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--bamboo, #8c6a3d);
+  margin: 0;
+}
+
+/* Adaptación responsive para pantallas medianas y móviles */
+@media (max-width: 900px) {
+  .concepto-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .concepto-badges {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .concepto-badge-item {
+    padding: 1rem 1.2rem;
+  }
+
+  .badge-icon-realistic {
+    width: 64px;
+    height: 64px;
+  }
+}

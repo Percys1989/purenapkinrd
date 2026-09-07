@@ -1,0 +1,222 @@
+/* --- Móvil --- */
+@media (max-width: 768px) {
+  .galeria {
+    padding: 70px 0;
+  }
+  .frame {
+    width: 240px;
+  }
+  .frame img {
+    height: 280px;
+  }
+  .marquee-track {
+    animation-duration: 32s; /* un poco más rápido en móvil */
+  }
+  .film-wrap::before,
+  .film-wrap::after {
+    width: 50px;
+  }
+  .frame .cap {
+    opacity: 1; /* siempre visible en móvil */
+  }
+}
+
+/* --- Accesibilidad: respeta "reducir movimiento" --- */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    overflow-x: auto;
+  }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 920px) {
+  .usos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .usos {
+    padding: 64px 0;
+  }
+  .usos-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .uso-card {
+    padding: 28px 24px;
+  }
+}
+/* ==========================================================================
+     13. MEDIA QUERIES (Responsivo)
+     ========================================================================== */
+@media (max-width: 920px) {
+  .hero {
+    min-height: 80vh;
+    padding: 110px 0 60px;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(28, 42, 24, 0.85) 0%,
+      rgba(28, 42, 24, 0.65) 50%,
+      rgba(28, 42, 24, 0.3) 100%
+    );
+  }
+
+  .concepto-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .how-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .how-grid .hydration-stage {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+  .usos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .pedidos-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .navlinks {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 20px;
+    right: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px;
+    background: rgba(250, 248, 238, 0.98);
+    border: 1px solid var(--stone-line);
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(28, 42, 24, 0.14);
+  }
+
+  .navlinks.is-open {
+    display: flex;
+  }
+  .navlinks a {
+    padding: 13px 12px;
+    border-radius: 10px;
+  }
+  .navlinks a:hover {
+    background: rgba(62, 107, 57, 0.06);
+  }
+  .navlinks a::after {
+    display: none;
+  }
+  .nav-cta {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  .nav-toggle {
+    display: inline-flex;
+  }
+  .concepto-badges {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .concepto-badge-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+  }
+}
+
+@media (max-width: 560px) {
+  nav {
+    padding: 14px 20px;
+  }
+  .logo {
+    font-size: 20px;
+  }
+  .nav-cta {
+    display: none;
+  }
+  .wrap {
+    padding: 0 20px;
+  }
+  .hero h1 {
+    font-size: 38px;
+  }
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .usos-grid {
+    grid-template-columns: 1fr;
+  }
+  .film-strip {
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .value-strip {
+    gap: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .droplet,
+  .ripple,
+  .tablet,
+  .fold-line,
+  .napkin-square,
+  .wa-float {
+    animation: none !important;
+  }
+  .hero-slide,
+  .nav-toggle span,
+  .btn-primary,
+  .btn-ghost,
+  .nav-cta,
+  .uso-card {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* ── Móvil: imagen estática para ahorrar datos ── */
+@media (max-width: 768px) {
+  .hero {
+    background-image: url("../img/hero/hero-poster1.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-carousel {
+    display: none;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(28, 42, 24, 0.86) 0%,
+      rgba(28, 42, 24, 0.68) 52%,
+      rgba(28, 42, 24, 0.42) 100%
+    );
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slide {
+    background-position: center;
+  }
+}

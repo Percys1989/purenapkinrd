@@ -1,0 +1,149 @@
+
+/* ==========================================================================
+   9. GALERÍA — Marquee infinito
+   ========================================================================== */
+.galeria {
+  padding: 100px 0;
+  background: var(--teal-deep);
+  color: var(--ivory-soft);
+  overflow: hidden;
+}
+
+.galeria .eyebrow {
+  color: var(--brass-soft);
+}
+.galeria .eyebrow::before {
+  background: var(--brass-soft);
+}
+.galeria .section-head p {
+  color: rgba(250, 247, 240, 0.68);
+}
+.section-head .highlight {
+  color: #b99544; /* Brass */
+  font-weight: 600;
+}
+
+/* --- Contenedor con fade lateral --- */
+.film-wrap {
+  position: relative;
+  margin-top: 48px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.film-wrap::before,
+.film-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 160px;
+  z-index: 2;
+  pointer-events: none;
+}
+.film-wrap::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--teal-deep), transparent);
+}
+.film-wrap::after {
+  right: 0;
+  background: linear-gradient(-90deg, var(--teal-deep), transparent);
+}
+
+/* --- Track que se mueve --- */
+.marquee {
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 28px;
+  width: max-content;
+  padding: 30px 14px;
+  animation: marquee-scroll 45s linear infinite;
+}
+
+/* Pausa al pasar el mouse */
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* mueve exactamente la mitad (el grupo 1) */
+    transform: translateX(-50%);
+  }
+}
+
+/* --- Marco polaroid --- */
+.frame {
+  flex: 0 0 auto;
+  width: 300px;
+  background: var(--ivory-soft);
+  padding: 14px 14px 16px;
+  border-radius: 3px;
+  box-shadow: 0 24px 48px -18px rgba(0, 0, 0, 0.55);
+  transform: rotate(var(--r, 0deg));
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease;
+}
+
+.frame:nth-child(odd) {
+  --r: -1.8deg;
+}
+.frame:nth-child(even) {
+  --r: 1.4deg;
+}
+
+.frame:hover {
+  transform: rotate(0deg) scale(1.04);
+  box-shadow: 0 34px 60px -20px rgba(0, 0, 0, 0.7);
+  z-index: 3;
+}
+
+/* --- Imagen + overlay --- */
+.frame .frame-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.frame img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  background: #00000010;
+}
+
+.frame .cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--ivory-soft);
+  padding: 26px 14px 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: linear-gradient(transparent, rgba(20, 20, 20, 0.78));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.frame:hover .cap {
+  opacity: 1;
+}
+.frame .cap::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  background: var(--brass-soft);
+  margin-right: 8px;
+  vertical-align: middle;
+}

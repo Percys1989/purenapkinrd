@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -55,8 +55,24 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/accesibilidad.css" />
+    <link rel="stylesheet" href="css/concepto.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/galeria.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/hero.css" />
     <link rel="stylesheet" href="css/preloading.css" />
+    <link rel="stylesheet" href="css/producto.css" />
+    <link rel="stylesheet" href="css/query.css" />
+    <link rel="stylesheet" href="css/section.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/usos.css" />
   </head>
   <body>
     <div id="preloader" class="preloader">
@@ -72,9 +88,24 @@
       <div class="preloader-flash" id="preloader-flash"></div>
 
       <div class="preloader-mark" id="preloader-mark">
-        <div class="preloader-word-wrap">
-          <div class="preloader-word">Pure<em>Napkin</em></div>
-          <div class="preloader-shine"></div>
+        <div class="preloader-word" aria-label="Pure Napkin">
+          <span class="pl-word">
+            <span class="pl-letter" style="animation-delay: 0.1s">P</span>
+            <span class="pl-letter" style="animation-delay: 0.145s">U</span>
+            <span class="pl-letter" style="animation-delay: 0.19s">R</span>
+            <span class="pl-letter" style="animation-delay: 0.235s">E</span>
+          </span>
+          <span class="pl-word">
+            <span class="pl-letter" style="animation-delay: 0.28s">N</span>
+            <span class="pl-letter" style="animation-delay: 0.325s">A</span>
+            <span class="pl-letter" style="animation-delay: 0.37s">P</span>
+            <span class="pl-letter" style="animation-delay: 0.415s">K</span>
+            <span class="pl-letter" style="animation-delay: 0.46s">I</span>
+            <span class="pl-letter" style="animation-delay: 0.505s">N</span>
+          </span>
+        </div>
+        <div class="preloader-tagline">
+          THE <span class="pl-green">GREEN</span> TOWEL IN WHITE
         </div>
       </div>
     </div>
@@ -82,18 +113,26 @@
       <nav aria-label="Navegación principal">
         <div class="logo">Pure<em>Napkin</em></div>
         <div class="navlinks" id="primary-navigation">
-          <a href="#concepto">Concepto</a>
-          <a href="#producto">Producto</a>
-          <a href="#galeria">Galería</a>
-          <a href="#usos">Usos</a>
-          <a href="#pedidos">Pedidos</a>
+          <a href="#concepto" data-es="Concepto" data-en="Concept">Concepto</a>
+          <a href="#producto" data-es="Producto" data-en="Product">Producto</a>
+          <a href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+          <a href="#usos" data-es="Usos" data-en="Uses">Usos</a>
+          <a href="#pedidos" data-es="Pedidos" data-en="Orders">Pedidos</a>
         </div>
+        <div class="lang-switch">
+          <button type="button" class="lang-btn active" id="btn-es">ES</button>
+          <span class="lang-divider">|</span>
+          <button type="button" class="lang-btn" id="btn-en">EN</button>
+        </div>
+
         <a
           class="nav-cta"
           id="nav-wa"
           href="#"
           target="_blank"
           rel="noopener noreferrer"
+          data-es="Cotizar por WhatsApp"
+          data-en="Get a quote via WhatsApp"
           >Cotizar por WhatsApp</a
         >
         <button
@@ -103,6 +142,8 @@
           aria-label="Abrir menú"
           aria-controls="primary-navigation"
           aria-expanded="false"
+          data-aria-es="Abrir menú"
+          data-aria-en="Open menu"
         >
           <span aria-hidden="true"></span><span aria-hidden="true"></span
           ><span aria-hidden="true"></span>
@@ -138,46 +179,102 @@
         <div class="hero-overlay"></div>
 
         <div class="wrap hero-content">
-          <div class="eyebrow">Higiene ceremonial · Ecológica</div>
-          <h1>Se comprime seca.<br />Despierta con agua.</h1>
-          <p class="lede">
+          <div
+            class="eyebrow"
+            data-es="Ritual de bienvenida · Alta hotelería"
+            data-en="Welcome ritual · Luxury hospitality"
+          >
+            Ritual de bienvenida · Alta hotelería
+          </div>
+          <h1
+            data-es="El lujo se siente<br />en cada detalle."
+            data-en="Luxury is felt<br />in every detail."
+          >
+            El lujo se siente<br />en cada detalle.
+          </h1>
+          <p
+            class="lede"
+            data-es="Una toalla refrescante de fibra de bambú, comprimida en una tableta. Dos cucharaditas de agua y se abre lista para servir — higiénica, individual y completamente biodegradable."
+            data-en="A refreshing bamboo fiber towel, compressed into a tablet. Two teaspoons of water and it opens ready to serve — hygienic, individual, and completely biodegradable."
+          >
             Una toalla refrescante de fibra de bambú, comprimida en una tableta.
             Dos cucharaditas de agua y se abre lista para servir — higiénica,
             individual y completamente biodegradable.
           </p>
           <div class="hero-actions">
-            <a href="#pedidos" class="btn-primary">Solicitar cotización</a>
+            <a
+              href="#pedidos"
+              class="btn-primary"
+              data-es="Solicitar cotización"
+              data-en="Request a quote"
+              >Solicitar cotización</a
+            >
             <a
               id="hero-wa"
               href="#"
               target="_blank"
               rel="noopener noreferrer"
               class="btn-ghost btn-ghost-light"
+              data-es="Escribir por WhatsApp"
+              data-en="Chat on WhatsApp"
               >Escribir por WhatsApp</a
             >
           </div>
           <div class="hero-stats hero-stats-light">
-            <div><b>23×24 cm</b><span>toalla desplegada</span></div>
-            <div><b>2 cdtas</b><span>de agua para activarla</span></div>
-            <div><b>~3 semanas</b><span>para biodegradarse</span></div>
+            <div>
+              <b>23×24 cm</b
+              ><span data-es="toalla desplegada" data-en="unfolded towel"
+                >toalla desplegada</span
+              >
+            </div>
+            <div>
+              <b>2 cdtas</b
+              ><span
+                data-es="de agua para activarla"
+                data-en="of water to activate"
+                >de agua para activarla</span
+              >
+            </div>
+            <div>
+              <b>~3 semanas</b
+              ><span data-es="para biodegradarse" data-en="to biodegrade"
+                >para biodegradarse</span
+              >
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="concepto" id="concepto">
-        <div class="wrap concepto-grid">
+      <section class="concepto reveal" id="concepto">
+        <div class="wrap concepto-grid reveal-group">
           <div>
-            <div class="eyebrow">Nuestro concepto</div>
-            <h2 class="concepto-title">
+            <div
+              class="eyebrow"
+              data-es="Nuestro concepto"
+              data-en="Our concept"
+            >
+              Nuestro concepto
+            </div>
+            <h2
+              class="concepto-title"
+              data-es="Una tradición asiática, servida en su mesa"
+              data-en="An Asian tradition, served at your table"
+            >
               Una tradición asiática, servida en su mesa
             </h2>
-            <p>
+            <p
+              data-es="La costumbre de recibir a un huésped con una toalla refrescante existe en muchas culturas: el Oshibori japonés a la llegada, o la toalla de bienvenida balinesa. Pure Napkin retoma ese gesto y lo hace desechable, higiénico y sostenible."
+              data-en="The tradition of welcoming a guest with a refreshing towel exists across many cultures: Japanese Oshibori upon arrival, or the Balinese welcome towel. Pure Napkin embraces that ritual, making it single-use, hygienic, and sustainable."
+            >
               La costumbre de recibir a un huésped con una toalla refrescante
               existe en muchas culturas: el Oshibori japonés a la llegada, o la
               toalla de bienvenida balinesa. Pure Napkin retoma ese gesto y lo
               hace desechable, higiénico y sostenible.
             </p>
-            <p>
+            <p
+              data-es="Cada toalla se comprime en una tableta que se presenta seca sobre una bandeja. Al verter una pequeña cantidad de agua, la tableta se hidrata y se despliega en segundos hasta convertirse en una toalla de tamaño completo — lista para refrescar manos y rostro antes de una comida, un tratamiento o una bienvenida."
+              data-en="Each towel is compressed into a tablet presented dry on a tray. By adding a small amount of water, it hydrates and expands within seconds into a full-sized towel — ready to refresh hands and face before a meal, a spa treatment, or a warm welcome."
+            >
               Cada toalla se comprime en una tableta que se presenta seca sobre
               una bandeja. Al verter una pequeña cantidad de agua, la tableta se
               hidrata y se despliega en segundos hasta convertirse en una toalla
@@ -185,76 +282,227 @@
               una comida, un tratamiento o una bienvenida.
             </p>
             <div class="origin-tags">
-              <span>Oshibori · Japón</span>
-              <span>Toalla de bienvenida · Bali</span>
-              <span>Bandejas hechas a mano</span>
+              <span data-es="Oshibori · Japón" data-en="Oshibori · Japan"
+                >Oshibori · Japón</span
+              >
+              <span
+                data-es="Toalla de bienvenida · Bali"
+                data-en="Welcome towel · Bali"
+                >Toalla de bienvenida · Bali</span
+              >
+              <span data-es="Bandejas hechas a mano" data-en="Handcrafted trays"
+                >Bandejas hechas a mano</span
+              >
             </div>
           </div>
-          <div class="quote-block">
-            <q
-              >Servir Pure Napkin en la mesa es una experiencia para sus
-              invitados: funciona en restaurantes, hoteles, clubes, discotecas,
-              spas, canchas de golf y en casa.</q
-            >
-            <div class="who">— Filosofía de servicio Pure Napkin</div>
+          <div class="concepto-right">
+            <div class="quote-block">
+              <q
+                data-es="Servir Pure Napkin en la mesa es una experiencia para sus invitados: funciona en restaurantes, hoteles, clubes, discotecas, spas, canchas de golf y en casa."
+                data-en="Serving Pure Napkin at the table is an experience for your guests: perfect for restaurants, hotels, clubs, lounges, spas, golf clubs, and at home."
+              >
+                Servir Pure Napkin en la mesa es una experiencia para sus
+                invitados: funciona en restaurantes, hoteles, clubes,
+                discotecas, spas, canchas de golf y en casa.
+              </q>
+              <div
+                class="who"
+                data-es="— Filosofía de servicio Pure Napkin"
+                data-en="— Pure Napkin Service Philosophy"
+              >
+                — Filosofía de servicio Pure Napkin
+              </div>
+            </div>
+
+            <!-- Bloque de pilares para balancear el espacio -->
+            <div class="concepto-badges">
+              <!-- Item 1: Biodegradable -->
+              <div class="concepto-badge-item">
+                <div class="badge-icon-realistic">
+                  <img
+                    src="img/iconos/leaf-bamboo.png"
+                    alt="Bambú natural biodegradable"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="badge-text">
+                  <h4 data-es="100% Biodegradable" data-en="100% Biodegradable">
+                    100% Biodegradable
+                  </h4>
+                  <p
+                    data-es="Fibra de bambú natural y pulpa de madera"
+                    data-en="Natural bamboo fiber & wood pulp"
+                  >
+                    Fibra de bambú natural y pulpa de madera
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2: Higiene -->
+              <div class="concepto-badge-item">
+                <div class="badge-icon-realistic">
+                  <img
+                    src="img/iconos/towel-tablet.png"
+                    alt="Pastilla comprimida higiénica"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="badge-text">
+                  <h4 data-es="Máxima Higiene" data-en="Maximum Hygiene">
+                    Máxima Higiene
+                  </h4>
+                  <p
+                    data-es="Uso individual libre de contaminación cruzada"
+                    data-en="Single-use, free from cross-contamination"
+                  >
+                    Uso individual libre de contaminación cruzada
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 3: Lujo -->
+              <div class="concepto-badge-item">
+                <div class="badge-icon-realistic">
+                  <img
+                    src="img/iconos/luxury-orchid.png"
+                    alt="Ritual de bienvenida de lujo"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="badge-text">
+                  <h4 data-es="Experiencia de Lujo" data-en="Luxury Experience">
+                    Experiencia de Lujo
+                  </h4>
+                  <p
+                    data-es="Ritual interactivo que cautiva a sus comensales"
+                    data-en="Interactive ritual that delights your guests"
+                  >
+                    Ritual interactivo que cautiva a sus comensales
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="producto" id="producto">
         <div class="wrap">
-          <div class="section-head">
-            <div class="eyebrow">El producto</div>
-            <h2>Una toalla real, comprimida al mínimo</h2>
-            <p>
+          <div class="section-head reveal">
+            <div
+              class="eyebrow"
+              data-es="La mejor elección para la hospitalidad moderna"
+              data-en="The premier choice for modern hospitality"
+            >
+              La mejor elección para la hospitalidad moderna
+            </div>
+            <h2
+              data-es="Inteligente. Higiénico. Excepcional."
+              data-en="Smart. Hygienic. Exceptional."
+            >
+              Inteligente. Higiénico. Excepcional.
+            </h2>
+            <p
+              data-es="Fibra de bambú combinada con pulpa de madera: un sustituto higiénico de la toalla de algodón, pensado para usarse una vez y biodegradarse sin dejar residuo hostil."
+              data-en="Bamboo fiber combined with wood pulp: a hygienic alternative to traditional cotton towels, designed for single-use and biodegradable without leaving harmful waste."
+            >
               Fibra de bambú combinada con pulpa de madera: un sustituto
               higiénico de la toalla de algodón, pensado para usarse una vez y
               biodegradarse sin dejar residuo hostil.
             </p>
           </div>
-          <div class="specs-grid">
+          <div class="specs-grid reveal-group">
             <div class="spec">
               <div class="num mono">23×24</div>
-              <div class="label">centímetros al desplegarse por completo</div>
+              <div
+                class="label"
+                data-es="centímetros al desplegarse por completo"
+                data-en="centimeters when fully unfolded"
+              >
+                centímetros al desplegarse por completo
+              </div>
             </div>
             <div class="spec">
               <div class="num mono">2</div>
-              <div class="label">
+              <div
+                class="label"
+                data-es="cucharaditas de agua para activar la tableta"
+                data-en="teaspoons of water to activate the tablet"
+              >
                 cucharaditas de agua para activar la tableta
               </div>
             </div>
             <div class="spec">
               <div class="num mono">100%</div>
-              <div class="label">fibra de bambú y pulpa de madera</div>
+              <div
+                class="label"
+                data-es="fibra de bambú y pulpa de madera"
+                data-en="bamboo fiber and wood pulp"
+              >
+                fibra de bambú y pulpa de madera
+              </div>
             </div>
             <div class="spec">
               <div class="num mono">~21d</div>
-              <div class="label">para biodegradarse en condiciones óptimas</div>
+              <div
+                class="label"
+                data-es="para biodegradarse en condiciones óptimas"
+                data-en="to biodegrade under optimal conditions"
+              >
+                para biodegradarse en condiciones óptimas
+              </div>
             </div>
           </div>
 
-          <div class="how-grid">
+          <div class="how-grid reveal">
             <div class="how-steps">
               <div class="step">
-                <div class="step-no">01 — SECA</div>
-                <h3>La tableta comprimida</h3>
-                <p>
+                <div class="step-no" data-es="01 — SECA" data-en="01 — DRY">
+                  01 — SECA
+                </div>
+                <h3
+                  data-es="La tableta comprimida"
+                  data-en="The compressed tablet"
+                >
+                  La tableta comprimida
+                </h3>
+                <p
+                  data-es="Se presenta en bandejas de madera o piedra volcánica hechas a mano en Bali. Compacta, limpia y lista para servir."
+                  data-en="Presented on wooden or volcanic stone trays handcrafted in Bali. Compact, pristine, and ready to serve."
+                >
                   Se presenta en bandejas de madera o piedra volcánica hechas a
                   mano en Bali. Compacta, limpia y lista para servir.
                 </p>
               </div>
               <div class="step">
-                <div class="step-no">02 — AGUA</div>
-                <h3>Dos cucharaditas bastan</h3>
-                <p>
+                <div class="step-no" data-es="02 — AGUA" data-en="02 — WATER">
+                  02 — AGUA
+                </div>
+                <h3
+                  data-es="Dos cucharaditas bastan"
+                  data-en="Two teaspoons are enough"
+                >
+                  Dos cucharaditas bastan
+                </h3>
+                <p
+                  data-es="El agua perfumada se vierte desde botellas diseñadas para un servicio elegante y sin derrames."
+                  data-en="Fragrant water is poured from custom-designed bottles for an elegant, spill-free service."
+                >
                   El agua perfumada se vierte desde botellas diseñadas para un
                   servicio elegante y sin derrames.
                 </p>
               </div>
               <div class="step">
-                <div class="step-no">03 — TOALLA</div>
-                <h3>Se abre en segundos</h3>
-                <p>
+                <div class="step-no" data-es="03 — TOALLA" data-en="03 — TOWEL">
+                  03 — TOALLA
+                </div>
+                <h3 data-es="Se abre en segundos" data-en="Expands in seconds">
+                  Se abre en segundos
+                </h3>
+                <p
+                  data-es="La tableta se hidrata, se expande y se despliega en una toalla completa, suave y lista para usar."
+                  data-en="The tablet absorbs the water, expands, and unfolds into a full-sized, soft towel ready to refresh."
+                >
                   La tableta se hidrata, se expande y se despliega en una toalla
                   completa, suave y lista para usar.
                 </p>
@@ -263,221 +511,21 @@
             <div>
               <div class="hydration-stage">
                 <div class="tray"></div>
-                <svg class="stage-svg" viewBox="0 0 300 300">
-                  <defs>
-                    <!-- Gradiente de la gota (volumen 3D) -->
-                    <radialGradient id="dropGrad" cx="38%" cy="30%" r="75%">
-                      <stop offset="0%" stop-color="#d6ecfa" />
-                      <stop offset="45%" stop-color="#8FBFE0" />
-                      <stop offset="100%" stop-color="#5b9dc9" />
-                    </radialGradient>
-
-                    <!-- Gradiente de la tableta comprimida BLANCA -->
-                    <radialGradient id="tabletGrad" cx="50%" cy="32%" r="72%">
-                      <stop offset="0%" stop-color="#ffffff" />
-                      <stop offset="55%" stop-color="#f7f4ec" />
-                      <stop offset="100%" stop-color="#eae3d2" />
-                    </radialGradient>
-
-                    <!-- Gradiente sutil de la toalla -->
-                    <linearGradient id="napkinGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stop-color="#ffffff" />
-                      <stop offset="100%" stop-color="#f4efe2" />
-                    </linearGradient>
-
-                    <!-- Sombra suave -->
-                    <filter
-                      id="softShadow"
-                      x="-50%"
-                      y="-50%"
-                      width="200%"
-                      height="200%"
-                    >
-                      <feDropShadow
-                        dx="0"
-                        dy="4"
-                        stdDeviation="6"
-                        flood-color="#000000"
-                        flood-opacity="0.12"
-                      />
-                    </filter>
-                  </defs>
-
-                  <!-- Sombra de contacto en la bandeja -->
-                  <ellipse
-                    class="contact-shadow"
-                    cx="150"
-                    cy="158"
-                    rx="40"
-                    ry="9"
-                    fill="#000000"
-                    opacity="0.10"
-                  />
-
-                  <!-- Ondas concéntricas (3 niveles) -->
-                  <ellipse
-                    class="ripple ripple-1"
-                    cx="150"
-                    cy="152"
-                    rx="30"
-                    ry="9"
-                    fill="none"
-                    stroke="#8FBFE0"
-                    stroke-width="2"
-                  />
-                  <ellipse
-                    class="ripple ripple-2"
-                    cx="150"
-                    cy="152"
-                    rx="30"
-                    ry="9"
-                    fill="none"
-                    stroke="#8FBFE0"
-                    stroke-width="1.5"
-                  />
-                  <ellipse
-                    class="ripple ripple-3"
-                    cx="150"
-                    cy="152"
-                    rx="30"
-                    ry="9"
-                    fill="none"
-                    stroke="#8FBFE0"
-                    stroke-width="1"
-                  />
-
-                  <!-- Tableta comprimida con volumen -->
-                  <!-- Tableta comprimida DESHIDRATADA (forma de disco prensado, blanca) -->
-                  <g class="tablet-group" filter="url(#softShadow)">
-                    <!-- Cuerpo principal del disco comprimido -->
-                    <ellipse
-                      class="tablet"
-                      cx="150"
-                      cy="150"
-                      rx="32"
-                      ry="18"
-                      fill="url(#tabletGrad)"
-                      stroke="#d8cfbb"
-                      stroke-width="1"
-                    />
-
-                    <!-- Canto lateral (da volumen de "pastilla prensada") -->
-                    <path
-                      class="tablet-edge"
-                      d="M118 150
-           A 32 18 0 0 0 182 150
-           L 182 156
-           A 32 18 0 0 1 118 156
-           Z"
-                      fill="#e8ddc4"
-                      opacity="0.9"
-                    />
-
-                    <!-- Ranuras de compresión concéntricas (marca del prensado) -->
-                    <ellipse
-                      cx="150"
-                      cy="149"
-                      rx="24"
-                      ry="13"
-                      fill="none"
-                      stroke="#e0d5ba"
-                      stroke-width="0.8"
-                      opacity="0.7"
-                    />
-                    <ellipse
-                      cx="150"
-                      cy="148"
-                      rx="15"
-                      ry="8"
-                      fill="none"
-                      stroke="#e0d5ba"
-                      stroke-width="0.8"
-                      opacity="0.6"
-                    />
-
-                    <!-- Hendidura central (típica de la pastilla comprimida) -->
-                    <ellipse
-                      cx="150"
-                      cy="148"
-                      rx="6"
-                      ry="3.2"
-                      fill="#ddd2b6"
-                      opacity="0.5"
-                    />
-
-                    <!-- Brillo especular superior -->
-                    <ellipse
-                      class="tablet-shine"
-                      cx="143"
-                      cy="143"
-                      rx="13"
-                      ry="4.5"
-                      fill="#ffffff"
-                      opacity="0.45"
-                    />
-                  </g>
-
-                  <!-- Toalla desplegada con textura -->
-                  <g class="napkin-group" filter="url(#softShadow)">
-                    <rect
-                      class="napkin-square"
-                      x="96"
-                      y="96"
-                      width="108"
-                      height="108"
-                      rx="8"
-                      fill="url(#napkinGrad)"
-                      stroke="#E4DEC2"
-                      stroke-width="1.5"
-                    />
-
-                    <!-- Textura de fibra de bambú (líneas finas) -->
-                    <g
-                      class="napkin-texture"
-                      stroke="#e8e0cc"
-                      stroke-width="0.6"
-                      opacity="0.7"
-                    >
-                      <line x1="108" y1="108" x2="192" y2="108" />
-                      <line x1="108" y1="122" x2="192" y2="122" />
-                      <line x1="108" y1="136" x2="192" y2="136" />
-                      <line x1="108" y1="150" x2="192" y2="150" />
-                      <line x1="108" y1="164" x2="192" y2="164" />
-                      <line x1="108" y1="178" x2="192" y2="178" />
-                      <line x1="108" y1="192" x2="192" y2="192" />
-                    </g>
-                  </g>
-
-                  <!-- Gota de agua realista (forma de lágrima + brillo) -->
-                  <g class="droplet">
-                    <path
-                      d="M150 55
-               C 150 55, 168 88, 168 102
-               A 18 18 0 1 1 132 102
-               C 132 88, 150 55, 150 55 Z"
-                      fill="url(#dropGrad)"
-                    />
-                    <!-- Brillo especular de la gota -->
-                    <ellipse
-                      cx="143"
-                      cy="98"
-                      rx="5"
-                      ry="7"
-                      fill="#ffffff"
-                      opacity="0.6"
-                    />
-                    <circle
-                      cx="156"
-                      cy="108"
-                      r="2.5"
-                      fill="#ffffff"
-                      opacity="0.4"
-                    />
-                  </g>
-                </svg>
+                <video
+                  class="hydration-video"
+                  src="video/hidratacion.mp4"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                ></video>
               </div>
 
-              <div class="stage-caption">
+              <div
+                class="stage-caption"
+                data-es="Tableta seca → agua → toalla lista, en segundos."
+                data-en="Dry tablet → water → towel ready, in seconds."
+              >
                 Tableta seca → agua → toalla lista, en segundos.
               </div>
             </div>
@@ -487,10 +535,20 @@
 
       <section class="galeria" id="galeria">
         <div class="wrap">
-          <div class="section-head">
-            <div class="eyebrow">Galería</div>
-            <h2>Descubre una nueva experiencia</h2>
-            <p>
+          <div class="section-head reveal">
+            <div class="eyebrow" data-es="Galería" data-en="Gallery">
+              Galería
+            </div>
+            <h2
+              data-es="Descubre una nueva experiencia"
+              data-en="Discover a new experience"
+            >
+              Descubre una nueva experiencia
+            </h2>
+            <p
+              data-es='Cambiamos la manera en cómo cuidas <span class="highlight">cada detalle</span>.'
+              data-en='We transform the way you curate <span class="highlight">every detail</span>.'
+            >
               Cambiamos la manera en cómo cuidas
               <span class="highlight">cada detalle</span>.
             </p>
@@ -514,8 +572,13 @@
                       decoding="async"
                     />
                   </picture>
-
-                  <div class="cap">toalla desplegada</div>
+                  <div
+                    class="cap"
+                    data-es="Toalla desplegada"
+                    data-en="Unfolded towel"
+                  >
+                    toalla desplegada
+                  </div>
                 </div>
               </div>
               <div class="frame">
@@ -531,7 +594,13 @@
                       decoding="async"
                     />
                   </picture>
-                  <div class="cap">Presentación en bandeja</div>
+                  <div
+                    class="cap"
+                    data-es="Presentación en bandeja"
+                    data-en="Tray presentation"
+                  >
+                    Presentación en bandeja
+                  </div>
                 </div>
               </div>
               <div class="frame">
@@ -547,7 +616,13 @@
                       decoding="async"
                     />
                   </picture>
-                  <div class="cap">Servicio de agua</div>
+                  <div
+                    class="cap"
+                    data-es="Servicio de agua"
+                    data-en="Water service"
+                  >
+                    Servicio de agua
+                  </div>
                 </div>
               </div>
               <div class="frame">
@@ -563,7 +638,9 @@
                       decoding="async"
                     />
                   </picture>
-                  <div class="cap">Hidratación</div>
+                  <div class="cap" data-es="Hidratación" data-en="Hydration">
+                    Hidratación
+                  </div>
                 </div>
               </div>
               <div class="frame">
@@ -579,7 +656,13 @@
                       decoding="async"
                     />
                   </picture>
-                  <div class="cap">Toalla desplegada</div>
+                  <div
+                    class="cap"
+                    data-es="Toalla desplegada"
+                    data-en="Unfolded towel"
+                  >
+                    Toalla desplegada
+                  </div>
                 </div>
               </div>
               <div class="frame">
@@ -595,11 +678,17 @@
                       decoding="async"
                     />
                   </picture>
-                  <div class="cap">Detalle de bienvenida</div>
+                  <div
+                    class="cap"
+                    data-es="Detalle de bienvenida"
+                    data-en="Welcome detail"
+                  >
+                    Detalle de bienvenida
+                  </div>
                 </div>
               </div>
 
-              <!-- GRUPO 2 (duplicado exacto — necesario para el loop infinito) -->
+              <!-- GRUPO 2 (duplicado) -->
               <div class="frame" aria-hidden="true">
                 <div class="frame-img">
                   <picture>
@@ -613,7 +702,13 @@
                       decoding="async"
                     />
                   </picture>
-                  <div class="cap">Toalla desplegada</div>
+                  <div
+                    class="cap"
+                    data-es="Toalla desplegada"
+                    data-en="Unfolded towel"
+                  >
+                    Toalla desplegada
+                  </div>
                 </div>
               </div>
               <div class="frame" aria-hidden="true">
@@ -629,7 +724,13 @@
                       decoding="async"
                     />
                   </picture>
-                  <div class="cap">Presentación en bandeja</div>
+                  <div
+                    class="cap"
+                    data-es="Presentación en bandeja"
+                    data-en="Tray presentation"
+                  >
+                    Presentación en bandeja
+                  </div>
                 </div>
               </div>
               <div class="frame" aria-hidden="true">
@@ -645,7 +746,13 @@
                       decoding="async"
                     />
                   </picture>
-                  <div class="cap">Servicio de agua</div>
+                  <div
+                    class="cap"
+                    data-es="Servicio de agua"
+                    data-en="Water service"
+                  >
+                    Servicio de agua
+                  </div>
                 </div>
               </div>
               <div class="frame" aria-hidden="true">
@@ -661,7 +768,9 @@
                       decoding="async"
                     />
                   </picture>
-                  <div class="cap">Hidratación</div>
+                  <div class="cap" data-es="Hidratación" data-en="Hydration">
+                    Hidratación
+                  </div>
                 </div>
               </div>
               <div class="frame" aria-hidden="true">
@@ -677,7 +786,13 @@
                       decoding="async"
                     />
                   </picture>
-                  <div class="cap">Toalla desplegada</div>
+                  <div
+                    class="cap"
+                    data-es="Toalla desplegada"
+                    data-en="Unfolded towel"
+                  >
+                    Toalla desplegada
+                  </div>
                 </div>
               </div>
               <div class="frame" aria-hidden="true">
@@ -693,7 +808,13 @@
                       decoding="async"
                     />
                   </picture>
-                  <div class="cap">Detalle de bienvenida</div>
+                  <div
+                    class="cap"
+                    data-es="Detalle de bienvenida"
+                    data-en="Welcome detail"
+                  >
+                    Detalle de bienvenida
+                  </div>
                 </div>
               </div>
             </div>
@@ -703,29 +824,50 @@
 
       <section class="usos" id="usos">
         <div class="wrap">
-          <div class="section-head">
-            <div class="eyebrow">Pensado para cada servicio</div>
-            <h2>Un gesto que funciona en cualquier ambiente</h2>
+          <div class="section-head reveal">
+            <div
+              class="eyebrow"
+              data-es="Pensado para cada servicio"
+              data-en="Tailored for every service"
+            >
+              Pensado para cada servicio
+            </div>
+            <h2
+              data-es="Un gesto que funciona en cualquier ambiente"
+              data-en="A signature gesture for any setting"
+            >
+              Un gesto que funciona en cualquier ambiente
+            </h2>
+            <p
+              data-es="Sus huéspedes recuerdan cómo los hizo sentir."
+              data-en="Your guests remember how you made them feel."
+            >
+              Sus huéspedes recuerdan cómo los hizo sentir.
+            </p>
           </div>
 
-          <div class="usos-grid">
+          <div class="usos-grid reveal-group">
             <div class="uso-card">
               <div class="ic-media">
                 <div class="ic-img">
                   <img src="img/usos/restaurante.jpg" alt="Restaurantes" />
                 </div>
-
                 <div class="ic-badge">
                   <i class="fa-solid fa-utensils"></i>
                 </div>
               </div>
-
-              <div class="t">Restaurantes</div>
-              <div class="d">
+              <div class="t" data-es="Restaurantes" data-en="Restaurants">
+                Restaurantes
+              </div>
+              <div
+                class="d"
+                data-es="La primera impresión de una cena que se recordará."
+                data-en="The first impression of an unforgettable dining experience."
+              >
                 La primera impresión de una cena que se recordará.
               </div>
             </div>
-            <!-- HOTeles -->
+
             <div class="uso-card">
               <div class="ic-media">
                 <div class="ic-img">
@@ -735,76 +877,92 @@
                   <i class="fa-solid fa-hotel"></i>
                 </div>
               </div>
-              <div class="t">Hoteles</div>
-              <div class="d">El lujo se siente desde el primer contacto.</div>
+              <div class="t" data-es="Hoteles" data-en="Hotels">Hoteles</div>
+              <div
+                class="d"
+                data-es="El lujo se siente desde el primer contacto."
+                data-en="True luxury begins at the very first welcome."
+              >
+                El lujo se siente desde el primer contacto.
+              </div>
             </div>
 
-            <!-- CLUBES -->
             <div class="uso-card">
               <div class="ic-media">
                 <div class="ic-img">
                   <img src="img/usos/club.jpg" alt="Clubes" />
                 </div>
-
                 <div class="ic-badge">
                   <i class="fa-solid fa-users"></i>
                 </div>
               </div>
-
-              <div class="t">Clubes</div>
-              <div class="d">Frescura elegante para el servicio VIP.</div>
+              <div class="t" data-es="Clubes" data-en="Clubs">Clubes</div>
+              <div
+                class="d"
+                data-es="Frescura elegante para el servicio VIP."
+                data-en="Elevated freshness designed for VIP hospitality."
+              >
+                Frescura elegante para el servicio VIP.
+              </div>
             </div>
 
-            <!-- DISCOTECAS -->
             <div class="uso-card">
               <div class="ic-media">
                 <div class="ic-img">
                   <img src="img/usos/discoteca.jpg" alt="Discotecas" />
                 </div>
-
                 <div class="ic-badge">
                   <i class="fa-solid fa-music"></i>
                 </div>
               </div>
-
-              <div class="t">Discotecas</div>
-              <div class="d">
+              <div class="t" data-es="Discotecas" data-en="Nightclubs">
+                Discotecas
+              </div>
+              <div
+                class="d"
+                data-es="Frescura exclusiva para las noches que importan."
+                data-en="Exclusive comfort for elevated nightlife."
+              >
                 Frescura exclusiva para las noches que importan.
               </div>
             </div>
 
-            <!-- SPAS -->
             <div class="uso-card">
               <div class="ic-media">
                 <div class="ic-img">
                   <img src="img/usos/spas.jpg" alt="Spas" />
                 </div>
-
                 <div class="ic-badge">
                   <i class="fa-solid fa-spa"></i>
                 </div>
               </div>
-
-              <div class="t">Spas</div>
-              <div class="d">
+              <div class="t" data-es="Spas" data-en="Spas">Spas</div>
+              <div
+                class="d"
+                data-es="El silencio de un verdadero ritual de bienestar."
+                data-en="The serenity of an authentic wellness ritual."
+              >
                 El silencio de un verdadero ritual de bienestar.
               </div>
             </div>
 
-            <!-- GOLF -->
             <div class="uso-card">
               <div class="ic-media">
                 <div class="ic-img">
                   <img src="img/usos/golf.jpg" alt="Golf" />
                 </div>
-
                 <div class="ic-badge">
                   <i class="fa-solid fa-golf-ball-tee"></i>
                 </div>
               </div>
-
-              <div class="t">Golf</div>
-              <div class="d">Un gesto de cortesía en cada recorrido.</div>
+              <div class="t" data-es="Golf" data-en="Golf">Golf</div>
+              <div
+                class="d"
+                data-es="Un gesto de cortesía en cada recorrido."
+                data-en="A refined courtesy on every course."
+              >
+                Un gesto de cortesía en cada recorrido.
+              </div>
             </div>
           </div>
         </div>
@@ -812,93 +970,187 @@
 
       <section class="pedidos" id="pedidos">
         <div class="wrap pedidos-grid">
-          <div class="pedidos-side">
-            <div class="eyebrow">Pedidos empresariales</div>
-            <h2 class="pedidos-title">¿Hotel, restaurante o evento?</h2>
-            <p>
+          <div class="pedidos-side reveal">
+            <div
+              class="eyebrow"
+              data-es="Pedidos empresariales"
+              data-en="B2B & Wholesale Orders"
+            >
+              Pedidos empresariales
+            </div>
+            <h2
+              class="pedidos-title"
+              data-es="¿Listo para elevar la experiencia de sus huéspedes?"
+              data-en="Ready to elevate your guest experience?"
+            >
+              ¿Listo para elevar la experiencia de sus huéspedes?
+            </h2>
+            <p
+              data-es="Ofrecemos precios especiales para pedidos al por mayor. Cuéntenos su volumen aproximado y le enviaremos una cotización por correo en menos de 24 horas — o escríbanos directo por WhatsApp."
+              data-en="We offer special pricing for wholesale and bulk orders. Share your estimated volume and we will send a custom quote within 24 hours — or message us directly via WhatsApp."
+            >
               Ofrecemos precios especiales para pedidos al por mayor. Cuéntenos
               su volumen aproximado y le enviaremos una cotización por correo en
               menos de 24 horas — o escríbanos directo por WhatsApp.
             </p>
             <div class="side-points">
-              <div>
+              <div
+                data-es="<b>1.</b> Complete el formulario con su volumen estimado."
+                data-en="<b>1.</b> Fill out the form with your estimated volume."
+              >
                 <b>1.</b> Complete el formulario con su volumen estimado.
               </div>
-              <div>
+              <div
+                data-es="<b>2.</b> Recibirá una cotización personalizada por correo."
+                data-en="<b>2.</b> Receive a customized quote via email."
+              >
                 <b>2.</b> Recibirá una cotización personalizada por correo.
               </div>
-              <div>
+              <div
+                data-es="<b>3.</b> Coordinamos entrega o diseño de bandeja a su marca."
+                data-en="<b>3.</b> We arrange delivery or custom branded trays."
+              >
                 <b>3.</b> Coordinamos entrega o diseño de bandeja a su marca.
               </div>
             </div>
           </div>
 
-          <div class="form-card">
+          <div class="form-card reveal">
             <form id="order-form" novalidate>
               <div class="form-row">
                 <div class="field">
-                  <label for="empresa">Empresa / Hotel</label>
+                  <label
+                    for="empresa"
+                    data-es="Empresa / Hotel"
+                    data-en="Company / Hotel"
+                    >Empresa / Hotel</label
+                  >
                   <input
                     type="text"
                     id="empresa"
                     name="empresa"
                     required
                     placeholder="Nombre del establecimiento"
+                    data-placeholder-es="Nombre del establecimiento"
+                    data-placeholder-en="Establishment name"
                   />
                 </div>
                 <div class="field">
-                  <label for="contacto">Persona de contacto</label>
+                  <label
+                    for="contacto"
+                    data-es="Persona de contacto"
+                    data-en="Contact Person"
+                    >Persona de contacto</label
+                  >
                   <input
                     type="text"
                     id="contacto"
                     name="contacto"
                     required
                     placeholder="Nombre y apellido"
+                    data-placeholder-es="Nombre y apellido"
+                    data-placeholder-en="Full name"
                   />
                 </div>
               </div>
               <div class="form-row">
                 <div class="field">
-                  <label for="email">Correo electrónico</label>
+                  <label
+                    for="email"
+                    data-es="Correo electrónico"
+                    data-en="Email Address"
+                    >Correo electrónico</label
+                  >
                   <input
                     type="email"
                     id="email"
                     name="email"
                     required
                     placeholder="nombre@empresa.com"
+                    data-placeholder-es="nombre@empresa.com"
+                    data-placeholder-en="name@company.com"
                   />
                 </div>
                 <div class="field">
-                  <label for="telefono">Teléfono</label>
+                  <label
+                    for="telefono"
+                    data-es="Teléfono"
+                    data-en="Phone Number"
+                    >Teléfono</label
+                  >
                   <input
                     type="tel"
                     id="telefono"
                     name="telefono"
                     required
                     placeholder="+1 809 000 0000"
+                    data-placeholder-es="+1 809 000 0000"
+                    data-placeholder-en="+1 809 000 0000"
                   />
                 </div>
               </div>
               <div class="field">
-                <label for="cantidad">Cantidad estimada</label>
+                <label
+                  for="cantidad"
+                  data-es="Cantidad estimada"
+                  data-en="Estimated Quantity"
+                  >Cantidad estimada</label
+                >
                 <select id="cantidad" name="cantidad" required>
-                  <option value="">Seleccione un rango</option>
-                  <option>100 – 500 unidades / mes</option>
-                  <option>500 – 2,000 unidades / mes</option>
-                  <option>2,000 – 10,000 unidades / mes</option>
-                  <option>Más de 10,000 unidades / mes</option>
+                  <option
+                    value=""
+                    data-es="Seleccione un rango"
+                    data-en="Select a range"
+                  >
+                    Seleccione un rango
+                  </option>
+                  <option
+                    value="100 – 500"
+                    data-es="100 – 500 unidades / mes"
+                    data-en="100 – 500 units / month"
+                  >
+                    100 – 500 unidades / mes
+                  </option>
+                  <option
+                    value="500 – 2,000"
+                    data-es="500 – 2,000 unidades / mes"
+                    data-en="500 – 2,000 units / month"
+                  >
+                    500 – 2,000 unidades / mes
+                  </option>
+                  <option
+                    value="2,000 – 10,000"
+                    data-es="2,000 – 10,000 unidades / mes"
+                    data-en="2,000 – 10,000 units / month"
+                  >
+                    2,000 – 10,000 unidades / mes
+                  </option>
+                  <option
+                    value="Más de 10,000"
+                    data-es="Más de 10,000 unidades / mes"
+                    data-en="More than 10,000 units / month"
+                  >
+                    Más de 10,000 unidades / mes
+                  </option>
                 </select>
               </div>
               <div class="field">
-                <label for="mensaje">Cuéntenos sobre su pedido</label>
+                <label
+                  for="mensaje"
+                  data-es="Cuéntenos sobre su pedido"
+                  data-en="Tell us about your order"
+                  >Cuéntenos sobre su pedido</label
+                >
                 <textarea
                   id="mensaje"
                   name="mensaje"
                   placeholder="Tipo de negocio, fragancia deseada, personalización de bandeja, fecha estimada..."
+                  data-placeholder-es="Tipo de negocio, fragancia deseada, personalización de bandeja, fecha estimada..."
+                  data-placeholder-en="Business type, requested fragrance, custom tray branding, estimated date..."
                 ></textarea>
               </div>
 
-              <!-- honeypot anti-spam, oculto por CSS -->
+              <!-- honeypot anti-spam -->
               <div class="field hp-field" aria-hidden="true">
                 <label for="website">No llenar este campo</label>
                 <input
@@ -914,6 +1166,8 @@
                 type="submit"
                 class="btn-primary form-submit"
                 id="submit-btn"
+                data-es="Enviar solicitud"
+                data-en="Submit request"
               >
                 Enviar solicitud
               </button>
@@ -922,6 +1176,8 @@
                 id="form-note"
                 role="status"
                 aria-live="polite"
+                data-es="También puede escribirnos directo a nuestro WhatsApp corporativo."
+                data-en="You can also reach us directly via our corporate WhatsApp."
               >
                 También puede escribirnos directo a nuestro WhatsApp
                 corporativo.
@@ -937,21 +1193,35 @@
         <div class="footer-grid">
           <div>
             <div class="logo">Pure<em>Napkin</em></div>
-            <p class="footer-description">
+            <p
+              class="footer-description"
+              data-es="La nueva norma de higiene y bienvenida, para hoteles, restaurantes y espacios que cuidan cada detalle."
+              data-en="The modern standard of hygiene and welcome, designed for hotels, restaurants, and venues attentive to every detail."
+            >
               La nueva norma de higiene y bienvenida, para hoteles, restaurantes
               y espacios que cuidan cada detalle.
             </p>
           </div>
           <div class="footer-links">
-            <a href="#concepto">Concepto</a>
-            <a href="#producto">Producto</a>
-            <a href="#galeria">Galería</a>
-            <a href="#pedidos">Pedidos</a>
+            <a href="#concepto" data-es="Concepto" data-en="Concept"
+              >Concepto</a
+            >
+            <a href="#producto" data-es="Producto" data-en="Product"
+              >Producto</a
+            >
+            <a href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+            <a href="#pedidos" data-es="Pedidos" data-en="Orders">Pedidos</a>
           </div>
         </div>
         <div class="footer-bottom">
-          <span>Pure Napkin © 2026 · República Dominicana</span>
-          <span>Hecho a mano en Bali</span>
+          <span
+            data-es="Pure Napkin © 2026 · República Dominicana"
+            data-en="Pure Napkin © 2026 · Dominican Republic"
+            >Pure Napkin © 2026 · República Dominicana</span
+          >
+          <span data-es="Hecho a mano en Bali" data-en="Handcrafted in Bali"
+            >Hecho a mano en Bali</span
+          >
         </div>
       </div>
     </footer>
@@ -971,7 +1241,10 @@
       </svg>
     </a>
 
-    <script src="js/script.js"></script>
     <script src="js/preloading.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/i18n.js"></script>
   </body>
 </html>

@@ -73,47 +73,83 @@
   z-index: 6;
 }
 
-.preloader-word-wrap {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-}
-
 .preloader-word {
-  font-family: "Fraunces", serif;
-  font-size: 72px;
-  color: var(--ivory-soft);
+  display: flex;
+  gap: 0.4em;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 800;
+  font-size: 56px;
   letter-spacing: 0.02em;
-  opacity: 0;
-  transform: translateY(10px);
+  text-transform: uppercase;
+  color: var(--ivory-soft);
 }
 .preloader-word em {
-  font-style: italic;
-  color: var(--brass-soft);
+  font-style: normal;
+  font-weight: 800;
+  color: var(--ivory-soft);
 }
-
-.preloader-mark.is-revealed .preloader-word {
-  animation: pl-word-in 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.05s 1 both;
+.pl-word {
+  display: inline-flex;
 }
-
-.preloader-shine {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -60%;
-  width: 40%;
-  background: linear-gradient(
-    100deg,
-    transparent 0%,
-    rgba(255, 233, 173, 0.85) 50%,
-    transparent 100%
-  );
-  transform: skewX(-20deg);
+.pl-letter {
+  display: inline-block;
   opacity: 0;
-  pointer-events: none;
+  transform: translateY(18px);
 }
-.preloader-mark.is-revealed .preloader-shine {
-  animation: pl-shine 1s ease 1.05s 1 both;
+.preloader-mark.is-revealed .pl-letter {
+  animation: pl-letter-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes pl-letter-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.preloader-tagline {
+  margin-top: 12px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ivory-soft);
+  text-align: center;
+  opacity: 0;
+}
+.preloader-tagline span {
+  color: #3cb043;
+}
+.pl-green {
+  color: #4ade80;
+}
+
+.preloader-mark.is-revealed .preloader-tagline {
+  animation: pl-fade-up 0.6s ease 0.75s forwards;
+}
+@keyframes pl-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .preloader-word {
+    font-size: 32px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pl-letter,
+  .preloader-tagline {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @keyframes pl-word-in {
@@ -124,22 +160,6 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-@keyframes pl-shine {
-  0% {
-    left: -60%;
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  100% {
-    left: 120%;
-    opacity: 0;
   }
 }
 

@@ -128,40 +128,5 @@ function setupOrderForm() {
   }
 }
 
-/* --- Slider del hero (autoplay accesible) --- */
-(function () {
-  const slides = document.querySelectorAll(".hero-slide");
-  if (slides.length < 2) return;
 
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  if (reduceMotion.matches) return;
 
-  let current = 0;
-  let timer;
-
-  const advance = () => {
-    slides[current].classList.remove("active");
-    current = (current + 1) % slides.length;
-    slides[current].classList.add("active");
-  };
-
-  const start = () => {
-    if (document.hidden || reduceMotion.matches) return;
-    clearInterval(timer);
-    timer = setInterval(advance, 5000);
-  };
-
-  const stop = () => clearInterval(timer);
-
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) stop();
-    else start();
-  });
-
-  reduceMotion.addEventListener?.("change", (event) => {
-    if (event.matches) stop();
-    else start();
-  });
-
-  start();
-})();
