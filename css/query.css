@@ -175,7 +175,7 @@
 /* ── Móvil: imagen estática para ahorrar datos ── */
 @media (max-width: 768px) {
   .hero {
-    background-image: url("../img/hero/hero-poster1.jpg");
+    background-image: url("../img/hero/hero_responsive.jpg");
     background-size: cover;
     background-position: center;
   }
