@@ -15,27 +15,26 @@ nav {
   position: relative;
   max-width: 1180px;
   margin: 0 auto;
-  padding: 18px 32px;
+  padding: 18px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo {
-  font-family: "Orbitron", sans-serif;
-  font-weight: 800;
-  font-size: 22px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--ivory-soft);
-  display: flex;
-  align-items: baseline;
-  gap: 0;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 }
-.logo em {
-  font-style: normal;
-  font-weight: 800;
-  color: var(--ivory-soft);
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.logo:hover img {
+  opacity: 0.9;
 }
 
 .navlinks {

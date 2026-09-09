@@ -35,7 +35,7 @@
 @media (max-width: 920px) {
   .hero {
     min-height: 80vh;
-    padding: 110px 0 60px;
+    padding: 60px 0 50px;
   }
 
   .hero-overlay {
@@ -126,8 +126,8 @@
   nav {
     padding: 14px 20px;
   }
-  .logo {
-    font-size: 20px;
+  .logo img {
+    height: 50px;
   }
   .nav-cta {
     display: none;
@@ -138,9 +138,17 @@
   .hero h1 {
     font-size: 38px;
   }
-  .hero-stats {
+  .hero p.lede {
+    font-size: 17px;
+    line-height: 1.55;
+    margin-top: 16px;
+  }
+
+  .hero-stats,
+  .hero-stats-pillars {
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: flex-start;
   }
   .film-strip {
     margin: 0 -20px;
@@ -149,6 +157,10 @@
   }
   .value-strip {
     gap: 20px;
+  }
+  .specs-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 }
 
@@ -203,7 +215,7 @@
 @media (max-width: 560px) {
   .wa-float {
     right: 18px;
-    bottom: 18px;
+    bottom: 50px;
     width: 54px;
     height: 54px;
   }

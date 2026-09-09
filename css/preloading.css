@@ -82,7 +82,7 @@
   gap: 0.4em;
   font-family: "Orbitron", sans-serif;
   font-weight: 800;
-  font-size: 56px;
+  font-size: 60px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--ivory-soft);
@@ -115,7 +115,7 @@
   margin-top: 12px;
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 2em;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--ivory-soft);

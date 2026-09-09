@@ -3,7 +3,7 @@
    9. GALERÍA — Marquee infinito
    ========================================================================== */
 .galeria {
-  padding: 100px 0;
+  padding: 50px 0;
   background: var(--teal-deep);
   color: var(--ivory-soft);
   overflow: hidden;

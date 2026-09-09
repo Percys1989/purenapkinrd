@@ -48,7 +48,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -59,6 +59,7 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/premiunbar.css" />
     <link rel="stylesheet" href="css/reveal.css" />
     <link rel="stylesheet" href="css/accesibilidad.css" />
     <link rel="stylesheet" href="css/concepto.css" />
@@ -111,8 +112,47 @@
       </div>
     </div>
     <header>
+      <div class="premium-bar">
+        <div class="premium-bar__inner">
+          <div class="premium-bar__brand">
+            <span
+              data-es="TOALLAS DESECHABLES PREMIUM Y ESENCIALES FACIALES"
+              data-en="PREMIUM DISPOSABLE TOWELS &amp; FACIAL ESSENTIALS"
+            >
+            </span>
+          </div>
+          <div class="premium-bar__features">
+            <div class="premium-feature">
+              <span class="premium-icon"
+                ><i class="fa-solid fa-leaf" aria-hidden="true"></i
+              ></span>
+              <span data-es="SOSTENIBLE" data-en="SUSTAINABLE"></span>
+            </div>
+            <span class="premium-separator">|</span>
+            <div class="premium-feature">
+              <span class="premium-icon"
+                ><i class="fa-solid fa-droplet" aria-hidden="true"></i
+              ></span>
+              <span data-es="HIGIÉNICO" data-en="HYGIENIC"></span>
+            </div>
+            <span class="premium-separator">|</span>
+            <div class="premium-feature">
+              <span class="premium-icon"
+                ><i class="fa-solid fa-gem" aria-hidden="true"></i
+              ></span>
+              <span
+                data-es="EXPERIENCIA DE LUJO"
+                data-en="LUXURY EXPERIENCE"
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <nav aria-label="Navegación principal">
-        <div class="logo">Pure<em>Napkin</em></div>
+        <a href="#" class="logo" aria-label="Pure Napkin Inicio">
+          <img src="img/logo/logo_white.png" alt="Pure Napkin" />
+        </a>
         <div class="navlinks" id="primary-navigation">
           <a href="#concepto" data-es="Concepto" data-en="Concept">Concepto</a>
           <a href="#producto" data-es="Producto" data-en="Product">Producto</a>
@@ -121,9 +161,9 @@
           <a href="#pedidos" data-es="Pedidos" data-en="Orders">Pedidos</a>
         </div>
         <div class="lang-switch">
-          <button type="button" class="lang-btn active" id="btn-es">ES</button>
+          <button type="button" class="lang-btn active" id="btn-en">EN</button>
           <span class="lang-divider">|</span>
-          <button type="button" class="lang-btn" id="btn-en">EN</button>
+          <button type="button" class="lang-btn" id="btn-es">ES</button>
         </div>
 
         <a
@@ -182,16 +222,14 @@
         <div class="wrap hero-content">
           <div
             class="eyebrow"
-            data-es="La toalla verde, en blanco"
-            data-en="The green towel in white"
-          >
-            La toalla verde, en blanco
-          </div>
+            data-es="TOALLAS DESECHABLES PREMIUM Y ESENCIALES FACIALES"
+            data-en="PREMIUM DISPOSABLE TOWELS & FACIAL ESSENTIALS"
+          ></div>
           <h1
-            data-es="Un pequeño ritual<br />de frescura."
-            data-en="A small ritual<br />of refreshment."
+            data-es="Un lujo<br />en cada Detalle"
+            data-en="Luxury is<br />in the Details."
           >
-            Un pequeño ritual<br />de frescura.
+            Luxury is <br />in the Details
           </h1>
           <p
             class="lede"
@@ -200,6 +238,13 @@
           >
             Toallas comprimidas para hospitalidad que se despliegan con agua —
             un momento de cuidado limpio y sereno para cada huésped.
+          </p>
+          <p
+            class="lede lede-sub"
+            data-es="Elaboradas en fibra 100% natural de bambú. Un ritual de bienvenida interactivo que deleita a sus clientes, eleva el estándar de su marca y optimiza sus operaciones."
+            data-en="Crafted from 100% natural bamboo fiber. An interactive welcome ritual that delights your guests, elevates your brand standards, and optimizes hospitality operations."
+          >
+            Elaboradas en fibra 100% natural de bambú. Un ritual de bienvenida interactivo que deleita a sus clientes, eleva el estándar de su marca y optimiza sus operaciones.
           </p>
           <div class="hero-actions">
             <a
@@ -220,25 +265,65 @@
               >Escribir por WhatsApp</a
             >
           </div>
-          <div class="hero-stats hero-stats-light">
-            <div>
-              <b>23×24 cm</b
-              ><span data-es="toalla desplegada" data-en="unfolded towel"
-                >toalla desplegada</span
+          <div class="hero-stats hero-stats-pillars">
+            <div class="hero-pillar">
+              <svg
+                class="pillar-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <!-- Hoja / Biodegradable acorde a la imagen -->
+                <path
+                  d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 21 3c-1.5 4-2 5.5-3.1 11.2A7 7 0 0 1 11 20z"
+                />
+                <path d="M10.5 13.5L3 21" />
+                <path d="M12.5 11.5c-2.5 1-4.5 3.5-5 6.5" />
+              </svg>
+              <span data-es="BIODEGRADABLE" data-en="BIODEGRADABLE"
+                >BIODEGRADABLE</span
               >
             </div>
-            <div>
-              <b>2 cdtas</b
-              ><span
-                data-es="de agua para activarla"
-                data-en="of water to activate"
-                >de agua para activarla</span
+            <div class="hero-pillar">
+              <svg
+                class="pillar-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
               >
+                <!-- Gota / Higiénico con doble arco inferior acorde a la imagen -->
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+                <path d="M8.5 14.5a4 4 0 0 0 7 0" />
+              </svg>
+              <span data-es="HIGIÉNICO" data-en="HYGIENIC">HYGIENIC</span>
             </div>
-            <div>
-              <b>~3 semanas</b
-              ><span data-es="para biodegradarse" data-en="to biodegrade"
-                >para biodegradarse</span
+            <div class="hero-pillar">
+              <svg
+                class="pillar-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <!-- Flor de loto / Experiencia de lujo acorde a la imagen -->
+                <path d="M12 4c-1.5 3.5-1.5 7.5 0 12 1.5-4.5 1.5-8.5 0-12z" />
+                <path d="M12 16c-3.2 0-6.8-2.2-8.5-6.5 3.5-.8 6.5.5 8.5 6.5z" />
+                <path d="M12 16c3.2 0 6.8-2.2 8.5-6.5-3.5-.8-6.5.5-8.5 6.5z" />
+                <path d="M3 17c3.5 2.5 6.5 2.5 9 1 2.5 1.5 5.5 1.5 9-1" />
+              </svg>
+              <span data-es="EXPERIENCIA DE LUJO" data-en="LUXURY EXPERIENCE"
+                >LUXURY EXPERIENCE</span
               >
             </div>
           </div>
@@ -282,36 +367,28 @@
               una comida, un tratamiento o una bienvenida.
             </p>
             <div class="origin-tags">
-              <span data-es="Oshibori · Japón" data-en="Oshibori · Japan"
-                >Oshibori · Japón</span
-              >
-              <span
-                data-es="Toalla de bienvenida · Bali"
-                data-en="Welcome towel · Bali"
-                >Toalla de bienvenida · Bali</span
-              >
-              <span data-es="Bandejas hechas a mano" data-en="Handcrafted trays"
-                >Bandejas hechas a mano</span
-              >
+              <span>
+                <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                <span data-es="100% Fibra de Bambú" data-en="100% Bamboo Fiber">100% Fibra de Bambú</span>
+              </span>
+              <span>
+                <i class="fa-solid fa-droplet" aria-hidden="true"></i>
+                <span data-es="Activación al Instante" data-en="Instant Activation">Activación al Instante</span>
+              </span>
+              <span>
+                <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+                <span data-es="Ritual de Bienvenida" data-en="Welcome Ritual">Ritual de Bienvenida</span>
+              </span>
             </div>
           </div>
           <div class="concepto-right">
-            <div class="quote-block">
-              <q
-                data-es="Servir Pure Napkin en la mesa es una experiencia para sus invitados: funciona en restaurantes, hoteles, clubes, discotecas, spas, canchas de golf y en casa."
-                data-en="Serving Pure Napkin at the table is an experience for your guests: perfect for restaurants, hotels, clubs, lounges, spas, golf clubs, and at home."
-              >
-                Servir Pure Napkin en la mesa es una experiencia para sus
-                invitados: funciona en restaurantes, hoteles, clubes,
-                discotecas, spas, canchas de golf y en casa.
-              </q>
-              <div
-                class="who"
-                data-es="— Filosofía de servicio Pure Napkin"
-                data-en="— Pure Napkin Service Philosophy"
-              >
-                — Filosofía de servicio Pure Napkin
-              </div>
+            <div class="concepto-image-frame">
+              <img
+                src="img/spa_luxury.jpg"
+                alt="Experiencia Pure Napkin en Spa de Lujo"
+                class="concepto-spa-img"
+                loading="lazy"
+              />
             </div>
 
             <!-- Bloque de pilares para balancear el espacio -->
@@ -413,47 +490,63 @@
           </div>
           <div class="specs-grid reveal-group">
             <div class="spec">
-              <div class="num mono">01</div>
-              <div
-                class="label"
-                data-es="Higiene de un solo uso — sin contaminación cruzada entre huéspedes"
-                data-en="Single-use hygiene — no cross-contamination between guests"
-              >
-                Higiene de un solo uso — sin contaminación cruzada entre
-                huéspedes
+              <div class="spec-top">
+                <span class="num mono">01</span>
+                <span class="spec-icon"><i class="fa-solid fa-shield-virus" aria-hidden="true"></i></span>
               </div>
+              <h4 class="spec-title" data-es="Higiene Individual" data-en="Single-Use Hygiene">Higiene Individual</h4>
+              <p
+                class="spec-desc"
+                data-es="Cero riesgo de contaminación cruzada. Cada huésped estrena una toalla virgen y desinfectada."
+                data-en="Zero risk of cross-contamination. Each guest receives a fresh, immaculate single-use towel."
+              >
+                Cero riesgo de contaminación cruzada. Cada huésped estrena una toalla virgen y desinfectada.
+              </p>
             </div>
+
             <div class="spec">
-              <div class="num mono">02</div>
-              <div
-                class="label"
-                data-es="Compacta por diseño — menos almacenamiento, manejo y volumen de lavado"
-                data-en="Compact by design — less storage, handling and laundry volume"
-              >
-                Compacta por diseño — menos almacenamiento, manejo y volumen de
-                lavado
+              <div class="spec-top">
+                <span class="num mono">02</span>
+                <span class="spec-icon"><i class="fa-solid fa-compress" aria-hidden="true"></i></span>
               </div>
+              <h4 class="spec-title" data-es="Máxima Eficiencia" data-en="Compact Efficiency">Máxima Eficiencia</h4>
+              <p
+                class="spec-desc"
+                data-es="Ahorro de hasta un 80% en espacio de almacén y eliminación total de costos de lavandería."
+                data-en="Saves up to 80% storage space while completely eliminating laundry logistics and costs."
+              >
+                Ahorro de hasta un 80% en espacio de almacén y eliminación total de costos de lavandería.
+              </p>
             </div>
+
             <div class="spec">
-              <div class="num mono">03</div>
-              <div
-                class="label"
-                data-es="Calidad consistente — una presentación impecable, en cada servicio"
-                data-en="Consistent quality — a composed presentation, every service"
-              >
-                Calidad consistente — una presentación impecable, en cada
-                servicio
+              <div class="spec-top">
+                <span class="num mono">03</span>
+                <span class="spec-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
               </div>
+              <h4 class="spec-title" data-es="Calidad Impecable" data-en="Impeccable Quality">Calidad Impecable</h4>
+              <p
+                class="spec-desc"
+                data-es="Elegancia uniforme y textura suave prémium garantizada en cada mesa o tratamiento."
+                data-en="Uniform elegance, luxurious softness, and flawless presentation for every single guest."
+              >
+                Elegancia uniforme y textura suave prémium garantizada en cada mesa o tratamiento.
+              </p>
             </div>
+
             <div class="spec">
-              <div class="num mono">04</div>
-              <div
-                class="label"
-                data-es="Material de fibra natural — fibra de bambú y pulpa de madera"
-                data-en="Natural fiber material — bamboo fiber and wood pulp construction"
-              >
-                Material de fibra natural — fibra de bambú y pulpa de madera
+              <div class="spec-top">
+                <span class="num mono">04</span>
+                <span class="spec-icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></span>
               </div>
+              <h4 class="spec-title" data-es="Fibras Naturales" data-en="Natural Fibers">Fibras Naturales</h4>
+              <p
+                class="spec-desc"
+                data-es="100% fibra vegetal de bambú renovable, libre de químicos agresivos y compostable."
+                data-en="100% renewable natural bamboo fiber, free from harsh chemicals and fully compostable."
+              >
+                100% fibra vegetal de bambú renovable, libre de químicos agresivos y compostable.
+              </p>
             </div>
           </div>
 
@@ -846,6 +939,7 @@
           </div>
 
           <div class="usos-grid reveal-group">
+            <!-- 1. RESTAURANTES -->
             <div class="uso-card">
               <div class="ic-media">
                 <div class="ic-img">
@@ -858,15 +952,15 @@
               <div class="t" data-es="Restaurantes" data-en="Restaurants">
                 Restaurantes
               </div>
-              <div
-                class="d"
-                data-es="La primera impresión de una cena que se recordará."
-                data-en="The first impression of an unforgettable dining experience."
-              >
-                La primera impresión de una cena que se recordará.
-              </div>
+              <ul class="uso-features">
+                <li data-es="Ritual de bienvenida en mesa" data-en="Tabletop welcome ritual">Ritual de bienvenida en mesa</li>
+                <li data-es="Servicio entre platos gourmet" data-en="Between-course refresh">Servicio entre platos gourmet</li>
+                <li data-es="Salones y terrazas VIP" data-en="VIP lounges &amp; terraces">Salones y terrazas VIP</li>
+                <li data-es="Presentación impecable" data-en="Impeccable tabletop touch">Presentación impecable</li>
+              </ul>
             </div>
 
+            <!-- 2. HOTELES -->
             <div class="uso-card">
               <div class="ic-media">
                 <div class="ic-img">
@@ -877,91 +971,50 @@
                 </div>
               </div>
               <div class="t" data-es="Hoteles" data-en="Hotels">Hoteles</div>
-              <div
-                class="d"
-                data-es="El lujo se siente desde el primer contacto."
-                data-en="True luxury begins at the very first welcome."
-              >
-                El lujo se siente desde el primer contacto.
-              </div>
+              <ul class="uso-features">
+                <li data-es="Amenidades para habitaciones" data-en="Guest room amenities">Amenidades para habitaciones</li>
+                <li data-es="Kits de bienvenida VIP" data-en="VIP welcome kits">Kits de bienvenida VIP</li>
+                <li data-es="Piscinas y wellness centers" data-en="Pool &amp; fitness centers">Piscinas y wellness centers</li>
+                <li data-es="Salas de conserjería" data-en="Concierge lounges">Salas de conserjería</li>
+              </ul>
             </div>
 
+            <!-- 3. SPAS -->
             <div class="uso-card">
               <div class="ic-media">
                 <div class="ic-img">
-                  <img src="img/usos/club.jpg" alt="Clubes" />
-                </div>
-                <div class="ic-badge">
-                  <i class="fa-solid fa-users"></i>
-                </div>
-              </div>
-              <div class="t" data-es="Clubes" data-en="Clubs">Clubes</div>
-              <div
-                class="d"
-                data-es="Frescura elegante para el servicio VIP."
-                data-en="Elevated freshness designed for VIP hospitality."
-              >
-                Frescura elegante para el servicio VIP.
-              </div>
-            </div>
-
-            <div class="uso-card">
-              <div class="ic-media">
-                <div class="ic-img">
-                  <img src="img/usos/discoteca.jpg" alt="Discotecas" />
-                </div>
-                <div class="ic-badge">
-                  <i class="fa-solid fa-music"></i>
-                </div>
-              </div>
-              <div class="t" data-es="Discotecas" data-en="Nightclubs">
-                Discotecas
-              </div>
-              <div
-                class="d"
-                data-es="Frescura exclusiva para las noches que importan."
-                data-en="Exclusive comfort for elevated nightlife."
-              >
-                Frescura exclusiva para las noches que importan.
-              </div>
-            </div>
-
-            <div class="uso-card">
-              <div class="ic-media">
-                <div class="ic-img">
-                  <img src="img/usos/spas.jpg" alt="Spas" />
+                  <img src="img/usos/spas.jpg" alt="Spas & Wellness" />
                 </div>
                 <div class="ic-badge">
                   <i class="fa-solid fa-spa"></i>
                 </div>
               </div>
-              <div class="t" data-es="Spas" data-en="Spas">Spas</div>
-              <div
-                class="d"
-                data-es="El silencio de un verdadero ritual de bienestar."
-                data-en="The serenity of an authentic wellness ritual."
-              >
-                El silencio de un verdadero ritual de bienestar.
-              </div>
+              <div class="t" data-es="Spas &amp; Wellness" data-en="Spas &amp; Wellness">Spas &amp; Wellness</div>
+              <ul class="uso-features">
+                <li data-es="Ritual previo al tratamiento" data-en="Pre-treatment rituals">Ritual previo al tratamiento</li>
+                <li data-es="Aromaterapia personalizada" data-en="Infused aromatherapy towels">Aromaterapia personalizada</li>
+                <li data-es="Salas de relajación y té" data-en="Relaxation &amp; tea lounges">Salas de relajación y té</li>
+                <li data-es="Higiene pura y serena" data-en="Pure hygienic serenity">Higiene pura y serena</li>
+              </ul>
             </div>
 
+            <!-- 4. AVIACIÓN & AEROPUERTOS -->
             <div class="uso-card">
               <div class="ic-media">
                 <div class="ic-img">
-                  <img src="img/usos/golf.jpg" alt="Golf" />
+                  <img src="img/usos/aviacion.jpg" alt="Aviación & Jets" />
                 </div>
                 <div class="ic-badge">
-                  <i class="fa-solid fa-golf-ball-tee"></i>
+                  <i class="fa-solid fa-plane"></i>
                 </div>
               </div>
-              <div class="t" data-es="Golf" data-en="Golf">Golf</div>
-              <div
-                class="d"
-                data-es="Un gesto de cortesía en cada recorrido."
-                data-en="A refined courtesy on every course."
-              >
-                Un gesto de cortesía en cada recorrido.
-              </div>
+              <div class="t" data-es="Aviación &amp; Jets" data-en="Aviation &amp; Jets">Aviación &amp; Jets</div>
+              <ul class="uso-features">
+                <li data-es="Cabinas de primera clase" data-en="First class cabin service">Cabinas de primera clase</li>
+                <li data-es="Vuelos privados y chárter" data-en="Private &amp; charter jets">Vuelos privados y chárter</li>
+                <li data-es="Salones VIP de aeropuerto" data-en="Airport VIP lounges">Salones VIP de aeropuerto</li>
+                <li data-es="Frescura y confort en vuelo" data-en="In-flight refreshed comfort">Frescura y confort en vuelo</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -1245,9 +1298,10 @@
             data-en="Pure Napkin © 2026 · Dominican Republic"
             >Pure Napkin © 2026 · República Dominicana</span
           >
-          <span data-es="Hecho a mano en Bali" data-en="Handcrafted in Bali"
-            >Hecho a mano en Bali</span
-          >
+          <span class="designed-by">
+            <span data-es="Diseño &amp; Desarrollo por" data-en="Design &amp; Development by">Diseño &amp; Desarrollo por</span>
+            <a href="https://www.altiora-media.com" target="_blank" rel="noopener noreferrer" class="agency-credit">Altiora Media</a>
+          </span>
         </div>
       </div>
     </footer>
