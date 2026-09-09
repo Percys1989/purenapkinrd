@@ -46,6 +46,12 @@
       rgba(28, 42, 24, 0.3) 100%
     );
   }
+  .hero-actions {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
 
   .concepto-grid {
     grid-template-columns: 1fr;
@@ -147,8 +153,9 @@
   .hero-stats,
   .hero-stats-pillars {
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: flex-start;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
   }
   .film-strip {
     margin: 0 -20px;
@@ -156,7 +163,7 @@
     padding-right: 20px;
   }
   .value-strip {
-    gap: 20px;
+    gap: 15px;
   }
   .specs-grid {
     grid-template-columns: 1fr;
