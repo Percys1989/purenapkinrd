@@ -60,12 +60,17 @@
   .specs-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .presentaciones-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
   .how-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 20px;
   }
   .how-grid .hydration-stage {
-    max-width: 260px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
   }
   .pedidos-grid {
@@ -168,6 +173,17 @@
   .specs-grid {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+  .presentaciones-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .presentaciones-block {
+    margin-top: 40px;
+    padding-top: 35px;
+  }
+  .presentacion-img-frame {
+    height: 180px;
   }
 }
 

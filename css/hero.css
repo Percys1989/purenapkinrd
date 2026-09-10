@@ -74,7 +74,7 @@
   position: relative;
   z-index: 2;
   max-width: 620px;
-  padding-top: 0;
+  padding-top: auto;
   padding-bottom: 30px;
   text-align: left;
   margin-left: 0;

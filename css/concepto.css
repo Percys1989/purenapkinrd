@@ -161,3 +161,48 @@
   color: var(--bamboo, #8c6a3d);
   margin: 0;
 }
+
+/* --- Video de hidratación en Concepto (armonizado con concepto-image-frame) --- */
+.concepto .how-grid {
+  display: block;
+  margin-top: 28px;
+}
+
+.concepto .hydration-stage {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 280px;
+  aspect-ratio: unset;
+  margin: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(20, 18, 15, 0.16);
+  border: 1px solid var(--stone-line, rgba(20, 18, 15, 0.12));
+  background: var(--teal-deep, #1b2e2b);
+}
+
+.concepto .hydration-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.concepto .hydration-stage:hover .hydration-video {
+  transform: scale(1.03);
+}
+
+.concepto .stage-caption {
+  text-align: center;
+  margin-top: 14px;
+  color: var(--basalt, #14120f);
+  opacity: 0.88;
+  font-weight: 600;
+  font-size: 13.5px;
+}
+

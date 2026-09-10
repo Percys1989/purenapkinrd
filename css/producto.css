@@ -93,10 +93,10 @@
 /* --- How Grid --- */
 .how-grid {
   display: grid;
-  grid-template-columns: 1.3fr 0.9fr;
+  grid-template-columns: 1fr;
   gap: 56px;
   align-items: center;
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 .how-steps {
@@ -157,4 +157,143 @@
   border-radius: 18px;
   box-shadow: 0 30px 60px -20px rgba(28, 42, 24, 0.35);
   display: block;
+}
+
+/* ==========================================================================
+   PRESENTACIONES Y ACCESORIOS DE PRODUCTO
+   ========================================================================== */
+.presentaciones-block {
+  margin-top: 60px;
+  padding-top: 50px;
+  border-top: 1px solid var(--stone-line, rgba(20, 18, 15, 0.1));
+}
+
+.presentaciones-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px auto;
+}
+
+.presentaciones-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--basalt, #14120f);
+  margin: 10px 0 12px 0;
+  letter-spacing: -0.01em;
+}
+
+.presentaciones-desc {
+  font-size: 14.5px;
+  color: #5c554a;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+.presentaciones-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.presentacion-card {
+  background: var(--ivory-soft, #fbf8f2);
+  border: 1px solid var(--stone-line, rgba(20, 18, 15, 0.12));
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(20, 18, 15, 0.04);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.presentacion-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 162, 39, 0.4);
+  box-shadow: 0 16px 36px rgba(20, 18, 15, 0.12);
+}
+
+.presentacion-img-frame {
+  position: relative;
+  background: #ffffff;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--stone-line, rgba(20, 18, 15, 0.08));
+  overflow: hidden;
+}
+
+.presentacion-img-frame img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.presentacion-card:hover .presentacion-img-frame img {
+  transform: scale(1.06);
+}
+
+.presentacion-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: rgba(251, 248, 242, 0.9);
+  color: var(--bamboo, #8c6a3d);
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 6px rgba(20, 18, 15, 0.05);
+}
+
+.presentacion-info {
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.presentacion-name {
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--basalt, #14120f);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.01em;
+}
+
+.presentacion-text {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #5c554a;
+  margin: 0 0 16px 0;
+  flex-grow: 1;
+}
+
+.presentacion-formats {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 400;
+  color: var(--brass, #c9a227);
+  font-family: "IBM Plex Mono", monospace;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(20, 18, 15, 0.12);
+}
+
+.presentacion-formats i {
+  font-size: 1em;
 }

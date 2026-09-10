@@ -21,6 +21,47 @@ footer .logo {
   color: var(--ivory-soft);
 }
 
+/* --- Redes Sociales --- */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(246, 241, 231, 0.05);
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  color: var(--brass-soft, #e3c565);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.footer-social-link svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-link:hover {
+  background: var(--brass, #c9a227);
+  border-color: var(--brass, #c9a227);
+  color: var(--basalt, #14120f);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(201, 162, 39, 0.35);
+}
+
+.footer-social-link:hover svg {
+  transform: scale(1.12);
+}
+
 .footer-links {
   display: flex;
   gap: 28px;
