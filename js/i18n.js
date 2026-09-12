@@ -1,44 +1,51 @@
 /**
  * i18n.js - PureNapkin
- * Controlador de cambio de idioma ES / EN
+ * Controlador de cambio de idioma ES / EN / FR
  */
 
-function setLanguage(lang) {
-  const targetLang = lang === "en" ? "en" : "es";
+const SUPPORTED_LANGS = ["es", "en", "fr"];
 
-  // 1. Textos e innerHTML
-  document.querySelectorAll("[data-es][data-en]").forEach((el) => {
-    const text = el.getAttribute(`data-${targetLang}`);
+function setLanguage(lang) {
+  const targetLang = SUPPORTED_LANGS.includes(lang) ? lang : "es";
+
+  // 1. Textos e innerHTML (con respaldo a español si falta la traducción)
+  document.querySelectorAll("[data-es]").forEach((el) => {
+    const text =
+      el.getAttribute(`data-${targetLang}`) ?? el.getAttribute("data-es");
     if (text !== null) {
       el.innerHTML = text;
     }
   });
 
   // 2. Placeholders de inputs y textareas
-  document
-    .querySelectorAll("[data-placeholder-es][data-placeholder-en]")
-    .forEach((el) => {
-      const ph = el.getAttribute(`data-placeholder-${targetLang}`);
-      if (ph !== null) {
-        el.setAttribute("placeholder", ph);
-      }
-    });
+  document.querySelectorAll("[data-placeholder-es]").forEach((el) => {
+    const ph =
+      el.getAttribute(`data-placeholder-${targetLang}`) ??
+      el.getAttribute("data-placeholder-es");
+    if (ph !== null) {
+      el.setAttribute("placeholder", ph);
+    }
+  });
 
   // 3. Accesibilidad (aria-labels dinámicos)
-  document.querySelectorAll("[data-aria-es][data-aria-en]").forEach((el) => {
-    const label = el.getAttribute(`data-aria-${targetLang}`);
+  document.querySelectorAll("[data-aria-es]").forEach((el) => {
+    const label =
+      el.getAttribute(`data-aria-${targetLang}`) ??
+      el.getAttribute("data-aria-es");
     if (label !== null) {
       el.setAttribute("aria-label", label);
     }
   });
 
   // 4. Actualizar estado visual de los botones
-  const btnEs = document.getElementById("btn-es");
-  const btnEn = document.getElementById("btn-en");
-  if (btnEs && btnEn) {
-    btnEs.classList.toggle("active", targetLang === "es");
-    btnEn.classList.toggle("active", targetLang === "en");
-  }
+  const buttons = {
+    es: document.getElementById("btn-es"),
+    en: document.getElementById("btn-en"),
+    fr: document.getElementById("btn-fr"),
+  };
+  Object.entries(buttons).forEach(([lang, btn]) => {
+    if (btn) btn.classList.toggle("active", targetLang === lang);
+  });
 
   // 5. Actualizar atributo lang del documento y guardar preferencia
   document.documentElement.lang = targetLang;
@@ -49,13 +56,15 @@ function setLanguage(lang) {
 document.addEventListener("DOMContentLoaded", () => {
   const btnEs = document.getElementById("btn-es");
   const btnEn = document.getElementById("btn-en");
+  const btnFr = document.getElementById("btn-fr");
 
   if (btnEs) btnEs.addEventListener("click", () => setLanguage("es"));
   if (btnEn) btnEn.addEventListener("click", () => setLanguage("en"));
+  if (btnFr) btnFr.addEventListener("click", () => setLanguage("fr"));
 
   // Cargar idioma guardado o por defecto 'es'
   const savedLang = localStorage.getItem("purenapkin_lang") || "es";
-  if (savedLang === "en") {
-    setLanguage("en");
+  if (savedLang !== "es") {
+    setLanguage(savedLang);
   }
 });
